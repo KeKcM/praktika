@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="header-left">
+            <h1>Панель администратора</h1>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-info-block">
+                <div id="user-fullname" class="user-fullname">Администратор</div>
+                <div id="user-role" class="user-role">Администратор</div>
+            </div>
+            
+            <a href="/" class="logout-btn">Выйти</a>
+        </div>
+    </header>
+
+    <nav class="admin-nav">
+        <ul class="nav-tabs">
+            <li><button class="tab-btn active" data-tab="products">Товары</button></li>
+            <li><button class="tab-btn" data-tab="orders">Заказы</button></li>
+            <li><button class="tab-btn" data-tab="clients">Клиенты</button></li>
+            <li><button class="tab-btn" data-tab="couriers">Курьеры</button></li>
+            <li><button class="tab-btn" data-tab="employees">Сотрудники</button></li>
+            <li><button class="tab-btn" data-tab="warehouses">Склады</button></li>
+            <li><button class="tab-btn" data-tab="statuses">Статусы</button></li>
+            <li><button class="tab-btn" data-tab="users">Пользователи</button></li>
+            <li><button class="tab-btn" data-tab="backup">Резервное копирование</button></li>
+        </ul>
+    </nav>
+
+    <div class="admin-container">
+        <!-- Вкладка товаров -->
+        <div id="products-tab" class="tab-content active">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('products')">+ Добавить товар</button>
+                <button class="action-btn refresh-btn" onclick="loadProducts()">Обновить</button>
+            </div>
+            <h2>Товары</h2>
+            <div id="products-container" class="products-grid">
+                <div class="loading">Загрузка товаров...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка заказов -->
+        <div id="orders-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('orders')">+ Добавить заказ</button>
+                <button class="action-btn refresh-btn" onclick="loadOrders()">Обновить</button>
+            </div>
+            <h2>Заказы</h2>
+            <div id="orders-container" class="orders-list">
+                <div class="loading">Загрузка заказов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка клиентов -->
+        <div id="clients-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('clients')">+ Добавить клиента</button>
+                <button class="action-btn refresh-btn" onclick="loadClients()">Обновить</button>
+            </div>
+            <h2>Клиенты</h2>
+            <div id="clients-container">
+                <div class="loading">Загрузка клиентов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка курьеров -->
+        <div id="couriers-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('couriers')">+ Добавить курьера</button>
+                <button class="action-btn refresh-btn" onclick="loadCouriers()">Обновить</button>
+            </div>
+            <h2>Курьеры</h2>
+            <div id="couriers-container" class="couriers-grid">
+                <div class="loading">Загрузка курьеров...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка сотрудников -->
+        <div id="employees-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('employees')">+ Добавить сотрудника</button>
+                <button class="action-btn refresh-btn" onclick="loadEmployees()">Обновить</button>
+            </div>
+            <h2>Сотрудники</h2>
+            <div id="employees-container" class="employees-grid">
+                <div class="loading">Загрузка сотрудников...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка складов -->
+        <div id="warehouses-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('warehouses')">+ Добавить склад</button>
+                <button class="action-btn refresh-btn" onclick="loadWarehouses()">Обновить</button>
+            </div>
+            <h2>Склады</h2>
+            <div id="warehouses-container" class="warehouses-grid">
+                <div class="loading">Загрузка складов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка статусов -->
+        <div id="statuses-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('statuses')">+ Добавить статус</button>
+                <button class="action-btn refresh-btn" onclick="loadStatuses()">Обновить</button>
+            </div>
+            <h2>Статусы заказов</h2>
+            <div id="statuses-container" class="statuses-list">
+                <div class="loading">Загрузка статусов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка пользователей -->
+        <div id="users-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn add-btn" onclick="showAddModal('users')">+ Добавить пользователя</button>
+                <button class="action-btn refresh-btn" onclick="loadUsers()">Обновить</button>
+            </div>
+            <h2>Пользователи системы</h2>
+            <div id="users-container" class="users-grid">
+                <div class="loading">Загрузка пользователей...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка резервного копирования -->
+        <div id="backup-tab" class="tab-content">
+            <h2>Резервное копирование</h2>
+
+                        
+            <!-- Добавьте эту секцию -->
+            <div class="admin-section" style="margin-bottom: 30px;">
+                <h3>Управление заказами</h3>
+                <div class="admin-actions">
+                    <button class="action-btn" onclick="finishAllOrders()" style="background-color: #e74c3c;">
+                        Завершить все заказы и освободить курьеров
+                    </button>
+                </div>
+                <p class="warning-text" style="color: #e74c3c; margin-top: 10px;">
+                    Внимание! Это действие завершит ВСЕ активные заказы и освободит ВСЕХ курьеров.
+                </p>
+            </div>
+            <div id="backup-container">
+                <div class="loading">Загрузка...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для добавления/редактирования -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Добавление</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="edit-form">
+                    <div id="form-fields"></div>
+                    <div class="form-group">
+                        <button type="submit" class="action-btn add-btn">Сохранить</button>
+                        <button type="button" class="action-btn refresh-btn" onclick="closeModal()">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,2162 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Ноутбук ASUS X515",
+      "weight_kg": "2.50",
+      "volume_m3": "0.003000",
+      "base_price": "75000.000",
+      "category": "Электроника",
+      "discount_percent": "10.00",
+      "manufacturer": "ASUS",
+      "supplier": "ООО \"ТехноМаркет\"",
+      "description": "Ноутбук ASUS X515 с диагональю 15.6 дюймов, процессор Intel Core i5, 8 ГБ ОЗУ, SSD 512 ГБ",
+      "stock_quantity": 0,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 3,
+      "product_name": "Платье вечернее",
+      "weight_kg": "0.80",
+      "volume_m3": "0.001000",
+      "base_price": "12000.000",
+      "category": "Одежда",
+      "discount_percent": "0.00",
+      "manufacturer": "Производитель",
+      "supplier": "Бутик \"Элит\"",
+      "description": "Вечернее платье черного цвета, длина до пола, материал - шифон",
+      "stock_quantity": 25,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 4,
+      "product_name": "Книга \"Война и мир\"",
+      "weight_kg": "1.20",
+      "volume_m3": "0.001000",
+      "base_price": "800.000",
+      "category": "Книги",
+      "discount_percent": "0.00",
+      "manufacturer": "Издательство \"Классика\"",
+      "supplier": "Книжный магазин \"Читай-город\"",
+      "description": "Классическое издание романа Льва Толстого \"Война и мир\" в твердом переплете",
+      "stock_quantity": 50,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 22,
+      "product_name": "Яйца куриные 10 шт",
+      "weight_kg": "0.60",
+      "volume_m3": "0.000600",
+      "base_price": "120.000",
+      "category": "Продукты",
+      "discount_percent": "5.00",
+      "manufacturer": "Птицефабрика",
+      "supplier": "Продуктовый склад",
+      "description": "Яйца куриные категории С0, упаковка 10 штук",
+      "stock_quantity": 25,
+      "unit": "уп.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 21,
+      "product_name": "Хлеб белый",
+      "weight_kg": "0.50",
+      "volume_m3": "0.000500",
+      "base_price": "60.000",
+      "category": "Продукты",
+      "discount_percent": "0.00",
+      "manufacturer": "Хлебозавод №1",
+      "supplier": "Хлебный цех",
+      "description": "Свежий белый хлеб, вес 500г",
+      "stock_quantity": 49,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 5,
+      "product_name": "Рис белый 1кг",
+      "weight_kg": "1.00",
+      "volume_m3": "0.001500",
+      "base_price": "120.000",
+      "category": "Продукты",
+      "discount_percent": "15.00",
+      "manufacturer": "Зернопродукт",
+      "supplier": "Продуктовый склад",
+      "description": "Рис белый шлифованный, 1 кг",
+      "stock_quantity": 35,
+      "unit": "пак.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 23,
+      "product_name": "Ручка шариковая",
+      "weight_kg": "0.01",
+      "volume_m3": "0.000010",
+      "base_price": "25.000",
+      "category": "Канцелярия",
+      "discount_percent": "0.00",
+      "manufacturer": "ErichKrause",
+      "supplier": "Канцелярский магазин",
+      "description": "Шариковая ручка синего цвета",
+      "stock_quantity": 150,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 24,
+      "product_name": "Гречка 1кг",
+      "weight_kg": "1.00",
+      "volume_m3": "0.001200",
+      "base_price": "110.000",
+      "category": "Продукты",
+      "discount_percent": "0.00",
+      "manufacturer": "Зернопродукт",
+      "supplier": "Продуктовый склад",
+      "description": "Гречневая крупа, 1 кг",
+      "stock_quantity": 40,
+      "unit": "пак.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 25,
+      "product_name": "Макароны 500г",
+      "weight_kg": "0.50",
+      "volume_m3": "0.000800",
+      "base_price": "85.000",
+      "category": "Продукты",
+      "discount_percent": "0.00",
+      "manufacturer": "Макаронная фабрика",
+      "supplier": "Продуктовый склад",
+      "description": "Макароны спагетти, 500г",
+      "stock_quantity": 30,
+      "unit": "уп.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 11,
+      "product_name": "Гантели 10 кг",
+      "weight_kg": "10.00",
+      "volume_m3": "0.010000",
+      "base_price": "4500.000",
+      "category": "Спорт",
+      "discount_percent": "10.00",
+      "manufacturer": "Производитель",
+      "supplier": "Спортивный склад",
+      "description": "Разборные гантели 10 кг каждая, прорезиненные ручки, металлические диски",
+      "stock_quantity": 14,
+      "unit": "кг",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 18,
+      "product_name": "Сувенирная тарелка",
+      "weight_kg": "0.80",
+      "volume_m3": "0.001000",
+      "base_price": "2500.000",
+      "category": "Другое",
+      "discount_percent": "15.00",
+      "manufacturer": "Производитель",
+      "supplier": "Сувенирный отдел",
+      "description": "Сувенирная фарфоровая тарелка с рисунком, диаметр 25 см",
+      "stock_quantity": 30,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 8,
+      "product_name": "Игрушка мягкая",
+      "weight_kg": "0.50",
+      "volume_m3": "0.002000",
+      "base_price": "1500.000",
+      "category": "Игрушки",
+      "discount_percent": "0.00",
+      "manufacturer": "Производитель",
+      "supplier": "Детский мир",
+      "description": "Мягкая игрушка \"Медведь\", высота 40 см, материал - плюш, гипоаллергенный",
+      "stock_quantity": 40,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 13,
+      "product_name": "Стул офисный",
+      "weight_kg": "8.00",
+      "volume_m3": "0.020000",
+      "base_price": "12000.000",
+      "category": "Дом и сад",
+      "discount_percent": "0.00",
+      "manufacturer": "Производитель",
+      "supplier": "Мебельный магазин",
+      "description": "Офисный стул с регулировкой высоты и наклона, сетчатая спинка",
+      "stock_quantity": 9,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 15,
+      "product_name": "Наушники Sony",
+      "weight_kg": "0.40",
+      "volume_m3": "0.000300",
+      "base_price": "18000.000",
+      "category": "Электроника",
+      "discount_percent": "0.00",
+      "manufacturer": "Sony",
+      "supplier": "Салон аудиотехники",
+      "description": "Беспроводные наушники Sony с шумоподавлением, время работы до 30 часов",
+      "stock_quantity": 6,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 10,
+      "product_name": "Крем для лица увлажняющий",
+      "weight_kg": "1.50",
+      "volume_m3": "0.001500",
+      "base_price": "9500.000",
+      "category": "Косметика",
+      "discount_percent": "0.00",
+      "manufacturer": "L'Oreal",
+      "supplier": "Косметический магазин",
+      "description": "Увлажняющий крем для лица, 50 мл",
+      "stock_quantity": 22,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 12,
+      "product_name": "Таблетки Нурофен 10 шт",
+      "weight_kg": "0.50",
+      "volume_m3": "0.000500",
+      "base_price": "3200.000",
+      "category": "Здоровье",
+      "discount_percent": "0.00",
+      "manufacturer": "Фармацевтический завод",
+      "supplier": "Аптека",
+      "description": "Обезболивающие таблетки Нурофен, 10 штук",
+      "stock_quantity": 50,
+      "unit": "уп.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 27,
+      "product_name": "Бинт стерильный",
+      "weight_kg": "0.05",
+      "volume_m3": "0.000100",
+      "base_price": "45.000",
+      "category": "Здоровье",
+      "discount_percent": "0.00",
+      "manufacturer": "Медицинская фабрика",
+      "supplier": "Аптека",
+      "description": "Стерильный бинт, 5 м",
+      "stock_quantity": 59,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 7,
+      "product_name": "Монитор LG 27\"",
+      "weight_kg": "6.00",
+      "volume_m3": "0.008000",
+      "base_price": "25000.000",
+      "category": "Электроника",
+      "discount_percent": "0.00",
+      "manufacturer": "LG",
+      "supplier": "ООО \"Электроника+\"",
+      "description": "Монитор LG 27 дюймов, разрешение 4K, время отклика 1 мс, поддержка HDR",
+      "stock_quantity": 7,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 19,
+      "product_name": "Энциклопедия",
+      "weight_kg": "3.50",
+      "volume_m3": "0.003000",
+      "base_price": "2800.000",
+      "category": "Книги",
+      "discount_percent": "0.00",
+      "manufacturer": "Издательство \"Знание\"",
+      "supplier": "Издательский дом",
+      "description": "Энциклопедия \"Всемирная история\" в 10 томах, твердый переплет",
+      "stock_quantity": 12,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 17,
+      "product_name": "Молоко 1л",
+      "weight_kg": "1.03",
+      "volume_m3": "0.001000",
+      "base_price": "80.000",
+      "category": "Продукты",
+      "discount_percent": "0.00",
+      "manufacturer": "Молочный комбинат",
+      "supplier": "Молочная база",
+      "description": "Пастеризованное молоко 1 литр, жирность 3.2%",
+      "stock_quantity": 30,
+      "unit": "л",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 20,
+      "product_name": "Горшок с цветами",
+      "weight_kg": "4.00",
+      "volume_m3": "0.005000",
+      "base_price": "6800.000",
+      "category": "Цветы",
+      "discount_percent": "40.00",
+      "manufacturer": "Производитель",
+      "supplier": "Цветочный питомник",
+      "description": "Горшок с комнатным растением \"Фикус Бенджамина\", высота 50 см",
+      "stock_quantity": 0,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 16,
+      "product_name": "Блокнот А5",
+      "weight_kg": "0.30",
+      "volume_m3": "0.000200",
+      "base_price": "890.000",
+      "category": "Канцелярия",
+      "discount_percent": "5.00",
+      "manufacturer": "ErichKrause",
+      "supplier": "Канцелярский магазин",
+      "description": "Блокнот формата А5, 100 листов",
+      "stock_quantity": 78,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 6,
+      "product_name": "Букет роз",
+      "weight_kg": "3.00",
+      "volume_m3": "0.004000",
+      "base_price": "5000.000",
+      "category": "Цветы",
+      "discount_percent": "20.00",
+      "manufacturer": "Производитель",
+      "supplier": "Цветочный рынок",
+      "description": "Свежий букет из 25 красных роз с зеленью, упакован в крафтовую бумагу",
+      "stock_quantity": 10,
+      "unit": "букет(ов)",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 9,
+      "product_name": "Кроссовки Nike",
+      "weight_kg": "1.20",
+      "volume_m3": "0.002000",
+      "base_price": "18000.000",
+      "category": "Одежда",
+      "discount_percent": "25.00",
+      "manufacturer": "Nike",
+      "supplier": "Спортмагазин \"Спортмастер\"",
+      "description": "Кроссовки Nike Air Max 270, размерная линейка 36-45, цвет черный/белый",
+      "stock_quantity": 17,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 14,
+      "product_name": "Куртка зимняя",
+      "weight_kg": "2.00",
+      "volume_m3": "0.003000",
+      "base_price": "21000.000",
+      "category": "Одежда",
+      "discount_percent": "30.00",
+      "manufacturer": "Производитель",
+      "supplier": "Одежда \"Экстрим\"",
+      "description": "Зимняя куртка с утеплителем, водоотталкивающая ткань, капюшон",
+      "stock_quantity": 8,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 26,
+      "product_name": "Тоник для лица",
+      "weight_kg": "0.20",
+      "volume_m3": "0.000200",
+      "base_price": "350.000",
+      "category": "Косметика",
+      "discount_percent": "0.00",
+      "manufacturer": "L'Oreal",
+      "supplier": "Косметический магазин",
+      "description": "Очищающий тоник для лица, 200 мл",
+      "stock_quantity": 24,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    },
+    {
+      "id": 2,
+      "product_name": "Смартфон iPhone 15",
+      "weight_kg": "0.30",
+      "volume_m3": "0.000200",
+      "base_price": "89900.000",
+      "category": "Электроника",
+      "discount_percent": "5.00",
+      "manufacturer": "Apple",
+      "supplier": "ИП Иванов А.В.",
+      "description": "Смартфон iPhone 15 с дисплеем 6.1 дюйма, камерой 48 Мп, память 128 ГБ",
+      "stock_quantity": 7,
+      "unit": "шт.",
+      "image_url": "https://avatars.mds.yandex.net/i?id=61ebe3ef6c8085aed5500285452f3536577163d9-11402781-images-thumbs&n=13"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "first_name": "Алексей",
+      "last_name": "Смирнов",
+      "patronymic": "Иванович",
+      "phone": "79161234567",
+      "address": "ул. Ленина, 10-5",
+      "email": "alex@mail.ru",
+      "payment_details": "Сбербанк ****1234"
+    },
+    {
+      "id": 2,
+      "first_name": "Мария",
+      "last_name": "Кузнецова",
+      "patronymic": "Сергеевна",
+      "phone": "79162345678",
+      "address": "пр. Мира, 25-12",
+      "email": "maria@yandex.ru",
+      "payment_details": "Тинькофф ****5678"
+    },
+    {
+      "id": 3,
+      "first_name": "Дмитрий",
+      "last_name": "Попов",
+      "patronymic": "Александрович",
+      "phone": "79163456789",
+      "address": "ул. Пушкина, 7-3",
+      "email": "dmitry@gmail.com",
+      "payment_details": "Альфа ****9012"
+    },
+    {
+      "id": 4,
+      "first_name": "Елена",
+      "last_name": "Васильева",
+      "patronymic": "Владимировна",
+      "phone": "79164567890",
+      "address": "ул. Гагарина, 15-8",
+      "email": "elena@mail.ru",
+      "payment_details": "ВТБ ****3456"
+    },
+    {
+      "id": 5,
+      "first_name": "Сергей",
+      "last_name": "Петров",
+      "patronymic": "Николаевич",
+      "phone": "79165678901",
+      "address": "ул. Советская, 3-21",
+      "email": "sergey@yandex.ru",
+      "payment_details": "Сбербанк ****7890"
+    },
+    {
+      "id": 6,
+      "first_name": "Анна",
+      "last_name": "Федорова",
+      "patronymic": "Дмитриевна",
+      "phone": "79166789012",
+      "address": "ул. Кирова, 12-4",
+      "email": "anna@mail.ru",
+      "payment_details": "Газпромбанк ****2345"
+    },
+    {
+      "id": 7,
+      "first_name": "Игорь",
+      "last_name": "Михайлов",
+      "patronymic": "Викторович",
+      "phone": "79167890123",
+      "address": "ул. Чехова, 5-9",
+      "email": "igor@gmail.com",
+      "payment_details": "Райффайзен ****6789"
+    },
+    {
+      "id": 8,
+      "first_name": "Ольга",
+      "last_name": "Новикова",
+      "patronymic": "Алексеевна",
+      "phone": "79168901234",
+      "address": "ул. Горького, 18-7",
+      "email": "olga@yandex.ru",
+      "payment_details": "Открытие ****0123"
+    },
+    {
+      "id": 9,
+      "first_name": "Павел",
+      "last_name": "Морозов",
+      "patronymic": "Сергеевич",
+      "phone": "79169012345",
+      "address": "ул. Садовая, 9-15",
+      "email": "pavel@mail.ru",
+      "payment_details": "Сбербанк ****4567"
+    },
+    {
+      "id": 10,
+      "first_name": "Татьяна",
+      "last_name": "Волкова",
+      "patronymic": "Ивановна",
+      "phone": "79170123456",
+      "address": "ул. Цветочная, 22-3",
+      "email": "tanya@gmail.com",
+      "payment_details": "Тинькофф ****8901"
+    },
+    {
+      "id": 11,
+      "first_name": "Андрей",
+      "last_name": "Зайцев",
+      "patronymic": "Петрович",
+      "phone": "79171234567",
+      "address": "ул. Лесная, 14-6",
+      "email": "andrey@mail.ru",
+      "payment_details": "Альфа ****2345"
+    },
+    {
+      "id": 12,
+      "first_name": "Юлия",
+      "last_name": "Павлова",
+      "patronymic": "Андреевна",
+      "phone": "79172345678",
+      "address": "ул. Молодежная, 8-11",
+      "email": "yulia@yandex.ru",
+      "payment_details": "ВТБ ****6789"
+    },
+    {
+      "id": 13,
+      "first_name": "Владимир",
+      "last_name": "Семенов",
+      "patronymic": "Олегович",
+      "phone": "79173456789",
+      "address": "ул. Речная, 17-9",
+      "email": "vladimir@gmail.com",
+      "payment_details": "Сбербанк ****0123"
+    },
+    {
+      "id": 14,
+      "first_name": "Екатерина",
+      "last_name": "Голубева",
+      "patronymic": "Викторовна",
+      "phone": "79174567890",
+      "address": "ул. Солнечная, 6-14",
+      "email": "katya@mail.ru",
+      "payment_details": "Газпромбанк ****4567"
+    },
+    {
+      "id": 15,
+      "first_name": "Николай",
+      "last_name": "Виноградов",
+      "patronymic": "Александрович",
+      "phone": "79175678901",
+      "address": "ул. Парковая, 11-2",
+      "email": "nikolay@yandex.ru",
+      "payment_details": "Открытие ****8901"
+    },
+    {
+      "id": 16,
+      "first_name": "Светлана",
+      "last_name": "Романова",
+      "patronymic": "Денисовна",
+      "phone": "79176789012",
+      "address": "ул. Зеленая, 19-8",
+      "email": "sveta@gmail.com",
+      "payment_details": "Райффайзен ****2345"
+    },
+    {
+      "id": 17,
+      "first_name": "Артем",
+      "last_name": "Козлов",
+      "patronymic": "Игоревич",
+      "phone": "79177890123",
+      "address": "ул. Северная, 13-5",
+      "email": "artem@mail.ru",
+      "payment_details": "Тинькофф ****6789"
+    },
+    {
+      "id": 18,
+      "first_name": "Наталья",
+      "last_name": "Лебедева",
+      "patronymic": "Сергеевна",
+      "phone": "79178901234",
+      "address": "ул. Южная, 4-12",
+      "email": "natalia@yandex.ru",
+      "payment_details": "Альфа ****0123"
+    },
+    {
+      "id": 19,
+      "first_name": "Максим",
+      "last_name": "Соловьев",
+      "patronymic": "Владимирович",
+      "phone": "79179012345",
+      "address": "ул. Восточная, 16-7",
+      "email": "maxim@gmail.com",
+      "payment_details": "ВТБ ****4567"
+    },
+    {
+      "id": 20,
+      "first_name": "Ирина",
+      "last_name": "Егорова",
+      "patronymic": "Анатольевна",
+      "phone": "79180123456",
+      "address": "ул. Западная, 2-10",
+      "email": "irina@mail.ru",
+      "payment_details": "Сбербанк ****8901"
+    }
+  ],
+  "couriers": [
+    {
+      "id": 3,
+      "first_name": "Антон",
+      "last_name": "Петров",
+      "patronymic": "Алексеевич",
+      "employment_status": "свободен",
+      "transport_type": "электротранспорт"
+    },
+    {
+      "id": 5,
+      "first_name": "Алексей",
+      "last_name": "Соколов",
+      "patronymic": "Дмитриевич",
+      "employment_status": "свободен",
+      "transport_type": "пеший"
+    },
+    {
+      "id": 6,
+      "first_name": "Денис",
+      "last_name": "Волков",
+      "patronymic": "Игоревич",
+      "employment_status": "свободен",
+      "transport_type": "велосипед"
+    },
+    {
+      "id": 11,
+      "first_name": "Роман",
+      "last_name": "Захаров",
+      "patronymic": "Сергеевич",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 13,
+      "first_name": "Григорий",
+      "last_name": "Макаров",
+      "patronymic": "Викторович",
+      "employment_status": "свободен",
+      "transport_type": "пеший"
+    },
+    {
+      "id": 14,
+      "first_name": "Олег",
+      "last_name": "Ковалев",
+      "patronymic": "Денисович",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 16,
+      "first_name": "Владимир",
+      "last_name": "Белов",
+      "patronymic": "Петрович",
+      "employment_status": "свободен",
+      "transport_type": "электротранспорт"
+    },
+    {
+      "id": 17,
+      "first_name": "Дмитрий",
+      "last_name": "Алексеев",
+      "patronymic": "Михайлович",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 19,
+      "first_name": "Павел",
+      "last_name": "Филиппов",
+      "patronymic": "Сергеевич",
+      "employment_status": "свободен",
+      "transport_type": "велосипед"
+    },
+    {
+      "id": 20,
+      "first_name": "Борис",
+      "last_name": "Давыдов",
+      "patronymic": "Анатольевич",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 8,
+      "first_name": "Андрей",
+      "last_name": "Морозов",
+      "patronymic": "Владимирович",
+      "employment_status": "свободен",
+      "transport_type": "электротранспорт"
+    },
+    {
+      "id": 10,
+      "first_name": "Артем",
+      "last_name": "Никитин",
+      "patronymic": "Олегович",
+      "employment_status": "свободен",
+      "transport_type": "велосипед"
+    },
+    {
+      "id": 2,
+      "first_name": "Петр",
+      "last_name": "Иванов",
+      "patronymic": "Сергеевич",
+      "employment_status": "свободен",
+      "transport_type": "велосипед"
+    },
+    {
+      "id": 4,
+      "first_name": "Михаил",
+      "last_name": "Кузнецов",
+      "patronymic": "Викторович",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 7,
+      "first_name": "Сергей",
+      "last_name": "Федоров",
+      "patronymic": "Николаевич",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    },
+    {
+      "id": 9,
+      "first_name": "Константин",
+      "last_name": "Егоров",
+      "patronymic": "Александрович",
+      "employment_status": "свободен",
+      "transport_type": "пеший"
+    },
+    {
+      "id": 12,
+      "first_name": "Виктор",
+      "last_name": "Борисов",
+      "patronymic": "Андреевич",
+      "employment_status": "свободен",
+      "transport_type": "электротранспорт"
+    },
+    {
+      "id": 15,
+      "first_name": "Николай",
+      "last_name": "Орлов",
+      "patronymic": "Ильич",
+      "employment_status": "свободен",
+      "transport_type": "велосипед"
+    },
+    {
+      "id": 18,
+      "first_name": "Юрий",
+      "last_name": "Степанов",
+      "patronymic": "Владимирович",
+      "employment_status": "свободен",
+      "transport_type": "пеший"
+    },
+    {
+      "id": 1,
+      "first_name": "Иван",
+      "last_name": "Сидоров",
+      "patronymic": "Петрович",
+      "employment_status": "свободен",
+      "transport_type": "авто"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Иван",
+      "last_name": "Петров",
+      "patronymic": "Сергеевич",
+      "position": "администратор",
+      "phone": "79001112233",
+      "email": "admin@delivery.ru",
+      "hire_date": "2023-01-13T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "first_name": "Анна",
+      "last_name": "Сидорова",
+      "patronymic": "Андреевна",
+      "position": "менеджер",
+      "phone": "79002223345",
+      "email": "manager@delivery.ru",
+      "hire_date": "2023-02-18T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "first_name": "Ольга",
+      "last_name": "Иванова",
+      "patronymic": "Дмитриевна",
+      "position": "оператор",
+      "phone": "79003334455",
+      "email": "operator1@delivery.ru",
+      "hire_date": "2023-03-08T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "first_name": "Сергей",
+      "last_name": "Кузнецов",
+      "patronymic": "Викторович",
+      "position": "оператор",
+      "phone": "79004445566",
+      "email": "operator2@delivery.ru",
+      "hire_date": "2023-04-03T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "first_name": "Мария",
+      "last_name": "Смирнова",
+      "patronymic": "Алексеевна",
+      "position": "менеджер",
+      "phone": "79005556677",
+      "email": "manager2@delivery.ru",
+      "hire_date": "2023-05-10T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "first_name": "Дмитрий",
+      "last_name": "Попов",
+      "patronymic": "Игоревич",
+      "position": "оператор",
+      "phone": "79006667788",
+      "email": "operator3@delivery.ru",
+      "hire_date": "2023-06-16T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "first_name": "Елена",
+      "last_name": "Васильева",
+      "patronymic": "Николаевна",
+      "position": "администратор",
+      "phone": "79007778899",
+      "email": "admin2@delivery.ru",
+      "hire_date": "2023-07-23T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "first_name": "Андрей",
+      "last_name": "Новиков",
+      "patronymic": "Олегович",
+      "position": "оператор",
+      "phone": "79008889900",
+      "email": "operator4@delivery.ru",
+      "hire_date": "2023-08-28T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "first_name": "Наталья",
+      "last_name": "Морозова",
+      "patronymic": "Сергеевна",
+      "position": "менеджер",
+      "phone": "79009990011",
+      "email": "manager3@delivery.ru",
+      "hire_date": "2023-09-12T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "first_name": "Павел",
+      "last_name": "Волков",
+      "patronymic": "Петрович",
+      "position": "оператор",
+      "phone": "79001001122",
+      "email": "operator5@delivery.ru",
+      "hire_date": "2023-10-20T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 11,
+      "first_name": "Татьяна",
+      "last_name": "Алексеева",
+      "patronymic": "Владимировна",
+      "position": "администратор",
+      "phone": "79001112234",
+      "email": "admin3@delivery.ru",
+      "hire_date": "2023-11-03T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 12,
+      "first_name": "Владимир",
+      "last_name": "Лебедев",
+      "patronymic": "Александрович",
+      "position": "оператор",
+      "phone": "79002223344",
+      "email": "operator6@delivery.ru",
+      "hire_date": "2023-12-08T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 13,
+      "first_name": "Юлия",
+      "last_name": "Семенова",
+      "patronymic": "Игоревна",
+      "position": "менеджер",
+      "phone": "79003334457",
+      "email": "manager4@delivery.ru",
+      "hire_date": "2024-01-13T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 14,
+      "first_name": "Михаил",
+      "last_name": "Козлов",
+      "patronymic": "Денисович",
+      "position": "оператор",
+      "phone": "79004445567",
+      "email": "operator7@delivery.ru",
+      "hire_date": "2024-02-18T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 15,
+      "first_name": "Ольга",
+      "last_name": "Зайцева",
+      "patronymic": "Анатольевна",
+      "position": "администратор",
+      "phone": "79005556678",
+      "email": "admin4@delivery.ru",
+      "hire_date": "2024-03-08T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 16,
+      "first_name": "Игорь",
+      "last_name": "Григорьев",
+      "patronymic": "Васильевич",
+      "position": "оператор",
+      "phone": "79006567788",
+      "email": "operator8@delivery.ru",
+      "hire_date": "2024-04-03T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 17,
+      "first_name": "Светлана",
+      "last_name": "Борисова",
+      "patronymic": "Павловна",
+      "position": "менеджер",
+      "phone": "79006778899",
+      "email": "manager5@delivery.ru",
+      "hire_date": "2025-05-10T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 18,
+      "first_name": "Роман",
+      "last_name": "Киселев",
+      "patronymic": "Андреевич",
+      "position": "оператор",
+      "phone": "79008889990",
+      "email": "operator9@delivery.ru",
+      "hire_date": "2025-06-16T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 19,
+      "first_name": "Екатерина",
+      "last_name": "Воробьева",
+      "patronymic": "Сергеевна",
+      "position": "администратор",
+      "phone": "79009990211",
+      "email": "admin5@delivery.ru",
+      "hire_date": "2025-07-23T19:00:00.000Z",
+      "is_active": true
+    },
+    {
+      "id": 20,
+      "first_name": "Артем",
+      "last_name": "Тимофеев",
+      "patronymic": "Ильич",
+      "position": "оператор",
+      "phone": "79001001422",
+      "email": "operator10@delivery.ru",
+      "hire_date": "2025-08-28T19:00:00.000Z",
+      "is_active": true
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "status": "принят"
+    },
+    {
+      "id": 2,
+      "status": "обработка"
+    },
+    {
+      "id": 3,
+      "status": "в пути"
+    },
+    {
+      "id": 4,
+      "status": "доставлен"
+    },
+    {
+      "id": 5,
+      "status": "отменён"
+    }
+  ],
+  "warehouses": [
+    {
+      "id": 1,
+      "name": "Основной склад",
+      "address": "ул. Складская, 1",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Запасной склад",
+      "address": "пр-т Логистический, 15",
+      "is_active": true
+    }
+  ],
+  "orders": [
+    {
+      "id": 10,
+      "client_id": 10,
+      "courier_id": 10,
+      "delivery_price": "220.00",
+      "order_date": "2025-01-19T01:45:00.000Z",
+      "delivery_date": "2026-04-05T18:47:50.067Z",
+      "delivery_address": "ул. Цветочная, д. 22, кв. 3",
+      "status_id": 4,
+      "products_total": "9500.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 27,
+      "client_id": 2,
+      "courier_id": 10,
+      "delivery_price": "440.00",
+      "order_date": "2026-04-05T18:37:44.933Z",
+      "delivery_date": "2026-04-05T18:47:53.832Z",
+      "delivery_address": "Островского 4/1",
+      "status_id": 4,
+      "products_total": "0.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 12,
+      "client_id": 12,
+      "courier_id": 12,
+      "delivery_price": "200.00",
+      "order_date": "2025-01-21T04:00:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Молодежная, д. 8, кв. 11",
+      "status_id": 4,
+      "products_total": "3200.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 13,
+      "client_id": 13,
+      "courier_id": 13,
+      "delivery_price": "1200.00",
+      "order_date": "2025-01-21T22:00:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Речная, д. 17, кв. 9",
+      "status_id": 4,
+      "products_total": "24000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 3,
+      "client_id": 2,
+      "courier_id": 3,
+      "delivery_price": "250.00",
+      "order_date": "2025-01-12T04:20:00.000Z",
+      "delivery_date": "2025-12-28T18:00:57.118Z",
+      "delivery_address": "ул. Пушкина, д. 7, кв. 3",
+      "status_id": 4,
+      "products_total": "12000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 1,
+      "client_id": 1,
+      "courier_id": 1,
+      "delivery_price": "500.00",
+      "order_date": "2025-01-09T23:30:00.000Z",
+      "delivery_date": "2025-01-10T05:00:00.000Z",
+      "delivery_address": "ул. Ленина, д. 10, кв. 5",
+      "status_id": 4,
+      "products_total": "67500.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 5,
+      "client_id": 5,
+      "courier_id": 5,
+      "delivery_price": "600.00",
+      "order_date": "2025-01-13T23:00:00.000Z",
+      "delivery_date": "2025-01-14T03:00:00.000Z",
+      "delivery_address": "ул. Советская, д. 3, кв. 21",
+      "status_id": 4,
+      "products_total": "102.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 7,
+      "client_id": 7,
+      "courier_id": 7,
+      "delivery_price": "450.00",
+      "order_date": "2025-01-16T02:30:00.000Z",
+      "delivery_date": "2025-01-16T08:00:00.000Z",
+      "delivery_address": "ул. Чехова, д. 5, кв. 9",
+      "status_id": 4,
+      "products_total": "25000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 9,
+      "client_id": 9,
+      "courier_id": 9,
+      "delivery_price": "280.00",
+      "order_date": "2025-01-18T00:00:00.000Z",
+      "delivery_date": "2025-01-18T04:30:00.000Z",
+      "delivery_address": "ул. Садовая, д. 9, кв. 15",
+      "status_id": 4,
+      "products_total": "13500.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 11,
+      "client_id": 11,
+      "courier_id": 11,
+      "delivery_price": "700.00",
+      "order_date": "2025-01-19T23:30:00.000Z",
+      "delivery_date": "2025-01-20T07:00:00.000Z",
+      "delivery_address": "ул. Лесная, д. 14, кв. 6",
+      "status_id": 4,
+      "products_total": "4050.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 14,
+      "client_id": 14,
+      "courier_id": 14,
+      "delivery_price": "320.00",
+      "order_date": "2025-01-23T05:20:00.000Z",
+      "delivery_date": "2025-01-23T09:00:00.000Z",
+      "delivery_address": "ул. Солнечная, д. 6, кв. 14",
+      "status_id": 4,
+      "products_total": "14700.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 16,
+      "client_id": 16,
+      "courier_id": 16,
+      "delivery_price": "420.00",
+      "order_date": "2025-01-25T01:00:00.000Z",
+      "delivery_date": "2025-01-25T06:45:00.000Z",
+      "delivery_address": "ул. Зеленая, д. 19, кв. 8",
+      "status_id": 4,
+      "products_total": "8455.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 18,
+      "client_id": 18,
+      "courier_id": 18,
+      "delivery_price": "270.00",
+      "order_date": "2025-01-27T03:40:00.000Z",
+      "delivery_date": "2025-01-27T08:20:00.000Z",
+      "delivery_address": "ул. Южная, д. 4, кв. 12",
+      "status_id": 4,
+      "products_total": "4250.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 2,
+      "client_id": 3,
+      "courier_id": 2,
+      "delivery_price": "300.00",
+      "order_date": "2025-01-11T01:00:00.000Z",
+      "delivery_date": "2025-01-11T06:30:00.000Z",
+      "delivery_address": "пр. Мира, д. 25, кв. 12",
+      "status_id": 4,
+      "products_total": "85405.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 4,
+      "client_id": 4,
+      "courier_id": 4,
+      "delivery_price": "400.00",
+      "order_date": "2025-01-13T00:15:00.000Z",
+      "delivery_date": "2025-12-28T18:56:51.441Z",
+      "delivery_address": "ул. Гагарина, д. 15, кв. 8",
+      "status_id": 4,
+      "products_total": "4000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 6,
+      "client_id": 6,
+      "courier_id": 6,
+      "delivery_price": "350.00",
+      "order_date": "2025-01-15T06:45:00.000Z",
+      "delivery_date": null,
+      "delivery_address": "ул. Кирова, д. 12, кв. 4",
+      "status_id": 5,
+      "products_total": "4000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 15,
+      "client_id": 15,
+      "courier_id": 15,
+      "delivery_price": "380.00",
+      "order_date": "2025-01-24T02:10:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Парковая, д. 11, кв. 2",
+      "status_id": 4,
+      "products_total": "18000.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 17,
+      "client_id": 17,
+      "courier_id": 17,
+      "delivery_price": "350.00",
+      "order_date": "2025-01-26T00:30:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Северная, д. 13, кв. 5",
+      "status_id": 4,
+      "products_total": "80.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 19,
+      "client_id": 19,
+      "courier_id": 19,
+      "delivery_price": "310.00",
+      "order_date": "2025-01-27T23:15:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Восточная, д. 16, кв. 7",
+      "status_id": 4,
+      "products_total": "2800.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 20,
+      "client_id": 20,
+      "courier_id": 20,
+      "delivery_price": "290.00",
+      "order_date": "2025-01-29T07:00:00.000Z",
+      "delivery_date": "2026-04-05T18:53:01.710Z",
+      "delivery_address": "ул. Западная, д. 2, кв. 10",
+      "status_id": 4,
+      "products_total": "4080.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 8,
+      "client_id": 8,
+      "courier_id": 8,
+      "delivery_price": "300.00",
+      "order_date": "2025-01-17T03:20:00.000Z",
+      "delivery_date": "2026-04-05T18:45:47.463Z",
+      "delivery_address": "ул. Горького, д. 18, кв. 7",
+      "status_id": 4,
+      "products_total": "4500.00",
+      "warehouse_id": 1
+    },
+    {
+      "id": 29,
+      "client_id": 1,
+      "courier_id": 1,
+      "delivery_price": "220.00",
+      "order_date": "2026-04-05T18:54:57.549Z",
+      "delivery_date": "2026-04-05T18:55:57.435Z",
+      "delivery_address": "Островского 4/1",
+      "status_id": 4,
+      "products_total": "0.00",
+      "warehouse_id": 1
+    }
+  ],
+  "order_items": [
+    {
+      "id": 1,
+      "order_id": 1,
+      "product_id": 1,
+      "quantity": 1,
+      "price": "67500.00"
+    },
+    {
+      "id": 2,
+      "order_id": 2,
+      "product_id": 2,
+      "quantity": 1,
+      "price": "85405.00"
+    },
+    {
+      "id": 3,
+      "order_id": 3,
+      "product_id": 3,
+      "quantity": 1,
+      "price": "12000.00"
+    },
+    {
+      "id": 4,
+      "order_id": 4,
+      "product_id": 4,
+      "quantity": 5,
+      "price": "800.00"
+    },
+    {
+      "id": 6,
+      "order_id": 6,
+      "product_id": 6,
+      "quantity": 1,
+      "price": "4000.00"
+    },
+    {
+      "id": 7,
+      "order_id": 7,
+      "product_id": 7,
+      "quantity": 1,
+      "price": "25000.00"
+    },
+    {
+      "id": 8,
+      "order_id": 8,
+      "product_id": 8,
+      "quantity": 3,
+      "price": "1500.00"
+    },
+    {
+      "id": 9,
+      "order_id": 9,
+      "product_id": 9,
+      "quantity": 1,
+      "price": "13500.00"
+    },
+    {
+      "id": 10,
+      "order_id": 10,
+      "product_id": 10,
+      "quantity": 1,
+      "price": "9500.00"
+    },
+    {
+      "id": 11,
+      "order_id": 11,
+      "product_id": 11,
+      "quantity": 1,
+      "price": "4050.00"
+    },
+    {
+      "id": 12,
+      "order_id": 12,
+      "product_id": 12,
+      "quantity": 1,
+      "price": "3200.00"
+    },
+    {
+      "id": 13,
+      "order_id": 13,
+      "product_id": 13,
+      "quantity": 2,
+      "price": "12000.00"
+    },
+    {
+      "id": 14,
+      "order_id": 14,
+      "product_id": 14,
+      "quantity": 1,
+      "price": "14700.00"
+    },
+    {
+      "id": 15,
+      "order_id": 15,
+      "product_id": 15,
+      "quantity": 1,
+      "price": "18000.00"
+    },
+    {
+      "id": 16,
+      "order_id": 16,
+      "product_id": 16,
+      "quantity": 10,
+      "price": "845.50"
+    },
+    {
+      "id": 18,
+      "order_id": 18,
+      "product_id": 18,
+      "quantity": 2,
+      "price": "2125.00"
+    },
+    {
+      "id": 19,
+      "order_id": 19,
+      "product_id": 19,
+      "quantity": 1,
+      "price": "2800.00"
+    },
+    {
+      "id": 20,
+      "order_id": 20,
+      "product_id": 20,
+      "quantity": 1,
+      "price": "4080.00"
+    },
+    {
+      "id": 17,
+      "order_id": 17,
+      "product_id": 17,
+      "quantity": 1,
+      "price": "80.00"
+    },
+    {
+      "id": 5,
+      "order_id": 5,
+      "product_id": 5,
+      "quantity": 1,
+      "price": "102.00"
+    },
+    {
+      "id": 31,
+      "order_id": 27,
+      "product_id": 27,
+      "quantity": 1,
+      "price": "45.00"
+    },
+    {
+      "id": 32,
+      "order_id": 27,
+      "product_id": 16,
+      "quantity": 1,
+      "price": "845.50"
+    },
+    {
+      "id": 33,
+      "order_id": 27,
+      "product_id": 6,
+      "quantity": 1,
+      "price": "4000.00"
+    },
+    {
+      "id": 34,
+      "order_id": 27,
+      "product_id": 9,
+      "quantity": 1,
+      "price": "13500.00"
+    },
+    {
+      "id": 35,
+      "order_id": 27,
+      "product_id": 14,
+      "quantity": 3,
+      "price": "14700.00"
+    },
+    {
+      "id": 36,
+      "order_id": 27,
+      "product_id": 26,
+      "quantity": 1,
+      "price": "350.00"
+    },
+    {
+      "id": 37,
+      "order_id": 27,
+      "product_id": 2,
+      "quantity": 1,
+      "price": "85405.00"
+    },
+    {
+      "id": 38,
+      "order_id": 29,
+      "product_id": 16,
+      "quantity": 1,
+      "price": "845.50"
+    }
+  ],
+  "payments": [],
+  "users": [
+    {
+      "id": 5,
+      "login": "manager2",
+      "password_hash": "$2b$10$ndqNkDdt/Phdt3jR4SCDCOgVQ19K.x582OpswROZuReUEUZQgsniG",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 5,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 6,
+      "login": "operator3",
+      "password_hash": "$2b$10$rV6OIjg1IgjyrnnMg8HkmuxUYB/rHGS9wgipa5hhrD/R3m5wo5AtK",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 6,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 8,
+      "login": "operator4",
+      "password_hash": "$2b$10$mK79P7JAtyYIwp/K2cUr8OgYbN6QYjruTfz2jN5molcJMrafbklpO",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 8,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 9,
+      "login": "manager3",
+      "password_hash": "$2b$10$tgB2nVP8qcC7x8yxjwUovupX9mjzFkvkCAQSL8YTlor2RepKzZnya",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 9,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 10,
+      "login": "operator5",
+      "password_hash": "$2b$10$3Of3LqTF.lgk.b6RoMSZUezlYN10SaZzn2SIcNlMGiRpKZoi2DGZa",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 10,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 11,
+      "login": "admin3",
+      "password_hash": "$2b$10$oGgZK.QyrvU30agx7QSjLOS4Rzs27daJIqKZcDa0DLLVLWclzBnn6",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 11,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 12,
+      "login": "operator6",
+      "password_hash": "$2b$10$vCIrei0V6Oouy.VRofXdteJbnz85CNRWD5n2p2lySw6eoXDVeSrEW",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 12,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 13,
+      "login": "manager4",
+      "password_hash": "$2b$10$6jZ3RB6AR/AksajH.prbh.YI/SPTfiEKFGEqLqgbQIUkDrYkyghZG",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 13,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 14,
+      "login": "operator7",
+      "password_hash": "$2b$10$TID.rwmoAu9Hk09PHM.TSOBLWRE0uL5Cfjc16ULu9ChZijnuKSPFi",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 14,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 15,
+      "login": "admin4",
+      "password_hash": "$2b$10$89rbjJPOl5p4tedf7.za/OIpeE1J1drKnISX7J4K82ZHpJkbLtHFO",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 15,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 16,
+      "login": "operator8",
+      "password_hash": "$2b$10$kP.y8Hh7LPdiCOz/9bbMw.2Gn3m8fczJ1.0kUWKAp7upKB46V42Yu",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 16,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 17,
+      "login": "manager5",
+      "password_hash": "$2b$10$1XRCuRgTeBYCExaO8J9dzOmgGCt7PqG/gUwC/1DVScIcImljxj1G2",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 17,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 18,
+      "login": "operator9",
+      "password_hash": "$2b$10$iS284VITJV5LX4ZfbfWePed3nOPCVwRCqr18mLO/YRld6OJl8TBzi",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 18,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 19,
+      "login": "admin5",
+      "password_hash": "$2b$10$yJRZMw3ivybv54CivVKI4.QF8XdDCx3j.JUGSYorKV.CDFHvLy7sO",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 19,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 20,
+      "login": "operator10",
+      "password_hash": "$2b$10$0WRzs1ebfQjxXTVQi6/P9umSKGEN2v7SlZh7hewNEWPaDZ7p.9E2q",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 20,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 22,
+      "login": "client2",
+      "password_hash": "$2b$10$qlpXIqUAB/evKNrdkmIocOH2qikPqXz6kJVU3WpTKOXxX.WND3XAC",
+      "client_id": 2,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 23,
+      "login": "client3",
+      "password_hash": "$2b$10$oUAJUeXVCrI9PjfFfS8YOurcUcEuUWLd6Oj238LpbPG.6HLehj.eS",
+      "client_id": 3,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 24,
+      "login": "client4",
+      "password_hash": "$2b$10$JiGhQvYQSR3m0kZ2QCjdZOYCb/5gywOsUK7CXOse1rai.WhfN4wtu",
+      "client_id": 4,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 25,
+      "login": "client5",
+      "password_hash": "$2b$10$sp/rd4ncM6Kotk2PUaq7w.zS5oPDOX.4ExonW0/NgIxwK4SQQpeTK",
+      "client_id": 5,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 26,
+      "login": "client6",
+      "password_hash": "$2b$10$o73HvQLJPpAsGW2g9K74JeZ58o823NLS/1dIT03gEbuv7xm19P0Ei",
+      "client_id": 6,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 27,
+      "login": "client7",
+      "password_hash": "$2b$10$13AaVaYLtBy5RkG/j27el.lcroTAnJ5MEzl7huh3dYwgHBP7p3DaO",
+      "client_id": 7,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 28,
+      "login": "client8",
+      "password_hash": "$2b$10$/hqyxudymIN2BGDA4GSvjuQ3F7AuKWbR1OIaPfacNstHKRIRqY7My",
+      "client_id": 8,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 29,
+      "login": "client9",
+      "password_hash": "$2b$10$3FGha21Hbs.gVN3iSSmol.fr0BzpK4/ENd604BIKa0.zlljy8MEAm",
+      "client_id": 9,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 30,
+      "login": "client10",
+      "password_hash": "$2b$10$cXxUZmfJeCcPXn5HE3Js6.rt4X0d3ticJAEr1W4HGIfLAr0ZLleP2",
+      "client_id": 10,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 31,
+      "login": "client11",
+      "password_hash": "$2b$10$Fmu//mJ9JNH/hSouPtLEzOCnlp1V6t6pvpVVq0/70gZzuTXLxzNam",
+      "client_id": 11,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 32,
+      "login": "client12",
+      "password_hash": "$2b$10$X7chzPhFpzzuwcsKCqTZAOCjoq9prH0UE7d0kNCKuCOyOdo5cgVSK",
+      "client_id": 12,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 33,
+      "login": "client13",
+      "password_hash": "$2b$10$m/EdSCPoCaX6nQMFz79Ei.RaMX2.z8X/emP84drSpWquL0tgihaqO",
+      "client_id": 13,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 35,
+      "login": "client15",
+      "password_hash": "$2b$10$pFtQqnGHTcCUvnubORQimu2NPZFJ88r1AhiEE/TBAoOpXvOLHSaGy",
+      "client_id": 15,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 36,
+      "login": "client16",
+      "password_hash": "$2b$10$eXuMlqCcinG/bsndeu0x1.AMzNXXq7O2bzmXD.5ErRPZBu2ySOJI.",
+      "client_id": 16,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 37,
+      "login": "client17",
+      "password_hash": "$2b$10$4muArkGPXv7MueL3R8QES.tOi.1goP.ORL3.CyLiZBflLcL02tSnu",
+      "client_id": 17,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 38,
+      "login": "client18",
+      "password_hash": "$2b$10$J2rUA3ifap6MRnYAXHSM6.LZYl9PDuIxoXccKZxB8tNXEXsXrpcei",
+      "client_id": 18,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 39,
+      "login": "client19",
+      "password_hash": "$2b$10$95651NHWkoIB4/TYs/86FepNPMRkiD93ZBT6zZ1d0CiVFPxBG4No.",
+      "client_id": 19,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 40,
+      "login": "client20",
+      "password_hash": "$2b$10$/r1UaDTl85nlIgB.Gtp1DuLriz//IEsgVoLCRnwJqtPnGWowNiGIC",
+      "client_id": 20,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 42,
+      "login": "courier2",
+      "password_hash": "$2b$10$AEUMXczhJshHOuvUsaVbNuMEwwwyJiv43JKSF57XUV8e427ozxjJ6",
+      "client_id": null,
+      "courier_id": 2,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 43,
+      "login": "courier3",
+      "password_hash": "$2b$10$i9Yf8hLSYKvEe/vfQbyAAOzThxgo0FrPQ9y3XVfVYbUnYei5qmiNe",
+      "client_id": null,
+      "courier_id": 3,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 44,
+      "login": "courier4",
+      "password_hash": "$2b$10$0/0X7hQKXESni7sc8DopQ.Q0K0UH56.T5P257GPyHg.TIrrxWCi22",
+      "client_id": null,
+      "courier_id": 4,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 45,
+      "login": "courier5",
+      "password_hash": "$2b$10$0Ht2FJ7AZj16Ba/PQG7lweblKOzsgQdYeDW431YfK7mzxXX6s/2Ei",
+      "client_id": null,
+      "courier_id": 5,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 46,
+      "login": "courier6",
+      "password_hash": "$2b$10$GtPZfwfQ.w/RV54ts4ly2ugintEx.TtaYE77obpLnlCWvgAUcjhJu",
+      "client_id": null,
+      "courier_id": 6,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 47,
+      "login": "courier7",
+      "password_hash": "$2b$10$CfUGYElDlenotcE6Qa0TIeopiwBSTC305VjS3VxqT1If/v5e9FxIC",
+      "client_id": null,
+      "courier_id": 7,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 48,
+      "login": "courier8",
+      "password_hash": "$2b$10$0qwSm.gAnzmRX9z39S80HuILDrgxshQQhud2J9AYcKtu8Y91j8QWq",
+      "client_id": null,
+      "courier_id": 8,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 49,
+      "login": "courier9",
+      "password_hash": "$2b$10$ot0Quo./HtszZJpPp5SJIObb/0gel3bsCw39svYjVL.qbx/76CRM.",
+      "client_id": null,
+      "courier_id": 9,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 50,
+      "login": "courier10",
+      "password_hash": "$2b$10$0EAD3aBS3ee7hd7SlGCFLecModFP4Y6JXG4n1MbwzWQxh0VhQscuy",
+      "client_id": null,
+      "courier_id": 10,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 51,
+      "login": "courier11",
+      "password_hash": "$2b$10$qlnwT/6nEquxsYj0gBGxUeHo0As/CKAT5lPR2U.84uQ1StM/MeXX2",
+      "client_id": null,
+      "courier_id": 11,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 52,
+      "login": "courier12",
+      "password_hash": "$2b$10$kSfteNptGSqg1TADipPy0Otc8PUDoDBu.pL5BHkFOcrmcmzaQDvh6",
+      "client_id": null,
+      "courier_id": 12,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 53,
+      "login": "courier13",
+      "password_hash": "$2b$10$TdQVL0Q/1IHs.2MFbXlEXejIMt7QTWHjKE2vNq39I1x7QggkisvWm",
+      "client_id": null,
+      "courier_id": 13,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 54,
+      "login": "courier14",
+      "password_hash": "$2b$10$w21RKPzbYSQmXHfYjuJU.OdGurW1TJQ0yxoSy6pxQEdtbG9qbgWBi",
+      "client_id": null,
+      "courier_id": 14,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 55,
+      "login": "courier15",
+      "password_hash": "$2b$10$YyMtMBKu2i95zolLgyFK5OZGZY4zXYVQ2XNbd3FXi/y8ZTAT3ou5O",
+      "client_id": null,
+      "courier_id": 15,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 56,
+      "login": "courier16",
+      "password_hash": "$2b$10$2oOYXnz7GsqfJT4L72cGEuYEplvUuzjDKVNIbtFNOafBbEqiVHrgW",
+      "client_id": null,
+      "courier_id": 16,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 57,
+      "login": "courier17",
+      "password_hash": "$2b$10$NXkH2n89Ls9MSYt2OWxL3OoSkD0ofCZpvj7XGVffmQXZNrhc4jsS.",
+      "client_id": null,
+      "courier_id": 17,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 58,
+      "login": "courier18",
+      "password_hash": "$2b$10$Bqv5u1IsebntFGoR0rQgoe7UUO8G5xMzgLZoV6l.l06vwvQy2/D8O",
+      "client_id": null,
+      "courier_id": 18,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 59,
+      "login": "courier19",
+      "password_hash": "$2b$10$8NK2ecDf.WnIpN3LqxqzDu0OON8.SPE9m.dSJwKb2ogqygtdESywa",
+      "client_id": null,
+      "courier_id": 19,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 60,
+      "login": "courier20",
+      "password_hash": "$2b$10$gGVxVC83PcbqbDtXIt0nY.lyF8QO.oj7ewMJOgbvuU5qCT3MZ09OC",
+      "client_id": null,
+      "courier_id": 20,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 7,
+      "login": "admin2",
+      "password_hash": "$2b$10$T4DFvKip128mmY2VJHwRe.UcN1CYOHtQeUsxi7mDXpBR6YZR6oAL.",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 7,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T15:24:37.904Z"
+    },
+    {
+      "id": 2,
+      "login": "manager",
+      "password_hash": "$2b$10$KCHZyig4OeYfwJXv5jrUeu5HP3sl5qRDveefU.DXWmH.HAYsS//Jm",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 2,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T15:25:55.684Z"
+    },
+    {
+      "id": 4,
+      "login": "operator2",
+      "password_hash": "$2b$10$jzbIfTJm63FfSy/2nczGn.GRS3mv2JGIL2hTSi4VJNXbDWrhOoT5W",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 4,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T15:24:57.031Z"
+    },
+    {
+      "id": 21,
+      "login": "client",
+      "password_hash": "$2b$10$F/dqdHpp5VMR9/Rq8t3wd.sI9cRl0X/5v6XYkk35g0/s8RRaucpX2",
+      "client_id": 1,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T22:59:52.556Z"
+    },
+    {
+      "id": 41,
+      "login": "courier",
+      "password_hash": "$2b$10$8V9tckGM9Bl3ajAihyyLY.l30ES71LWE6GzojlpUdYuFam1UE5tTW",
+      "client_id": null,
+      "courier_id": 1,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 34,
+      "login": "client14",
+      "password_hash": "$2b$10$.dXo5uFEvcFlB6iOKtAR4uoHmgWqRfUT3aS3/IFSkHl6ZU97LYGqO",
+      "client_id": 14,
+      "courier_id": null,
+      "employee_id": null,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": null
+    },
+    {
+      "id": 3,
+      "login": "operator",
+      "password_hash": "$2b$10$beeU/Pd9c/UifhHYamsmzuGZP/Ats6wy5HS7eqkI5Tzt9Zqy0IBjC",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 3,
+      "is_active": true,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T15:23:55.130Z"
+    },
+    {
+      "id": 1,
+      "login": "admin",
+      "password_hash": "$2b$10$eG/jWGPFeYjIUv8Ybn/v7ez7rtTXKtR3PV56NTl01GlA8XlN5UZai",
+      "client_id": null,
+      "courier_id": null,
+      "employee_id": 1,
+      "is_active": false,
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "last_login": "2025-12-25T16:23:23.848Z"
+    }
+  ],
+  "_metadata": {
+    "created_at": "2026-04-05T18:56:10.473Z",
+    "version": "1.0"
+  }
+}

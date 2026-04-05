@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель курьера</title>
+    <link rel="stylesheet" href="/css/courier.css">
+</head>
+<body>
+    <header class="courier-header">
+        <div class="header-left">
+            <h1>Панель курьера</h1>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-info-block">
+                <div id="user-fullname" class="user-fullname">Курьер</div>
+                <div id="user-role" class="user-role">Курьер</div>
+            </div>
+            
+            <a href="/" class="logout-btn">Выйти</a>
+        </div>
+    </header>
+
+    <div class="courier-container">
+        <h2>Мои заказы</h2>
+        <div id="orders-container" class="orders-list">
+            <div class="loading">Загрузка заказов...</div>
+        </div>
+    </div>
+
+    <script src="/js/courier.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель менеджера</title>
+    <link rel="stylesheet" href="/css/manager.css">
+</head>
+<body>
+    <header class="manager-header">
+        <div class="header-left">
+            <h1>Панель менеджера</h1>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-info-block">
+                <div id="user-fullname" class="user-fullname">Менеджер</div>
+                <div id="user-role" class="user-role">Менеджер</div>
+            </div>
+            
+            <a href="/" class="logout-btn">Выйти</a>
+        </div>
+    </header>
+
+    <nav class="manager-nav">
+        <ul class="nav-tabs">
+            <li><button class="tab-btn active" data-tab="assign">Назначение курьеров</button></li>
+            <li><button class="tab-btn" data-tab="orders">Все заказы</button></li>
+            <li><button class="tab-btn" data-tab="products">Товары</button></li>
+            <li><button class="tab-btn" data-tab="couriers">Курьеры</button></li>
+        </ul>
+    </nav>
+
+    <div class="manager-container">
+        <!-- Вкладка назначения курьеров -->
+        <div id="assign-tab" class="tab-content active">
+            <h2>Назначение курьеров на заказы</h2>
+            <div id="assign-container" class="assign-container">
+                <div class="loading">Загрузка заказов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка всех заказов -->
+        <div id="orders-tab" class="tab-content">
+            <h2>Все заказы</h2>
+            <div id="orders-container" class="orders-list">
+                <div class="loading">Загрузка заказов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка товаров -->
+        <div id="products-tab" class="tab-content">
+            <h2>Товары</h2>
+            <div id="products-container" class="products-grid">
+                <div class="loading">Загрузка товаров...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка курьеров -->
+        <div id="couriers-tab" class="tab-content">
+            <h2>Курьеры</h2>
+            <div id="couriers-container" class="couriers-grid">
+                <div class="loading">Загрузка курьеров...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для назначения курьера (только одно!) -->
+    <div id="assign-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Назначение курьера на заказ</h3>
+                <span class="close-btn" onclick="closeAssignModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="order-info"></div>
+                
+                <div class="delivery-calculation">
+                    <h4>Расчет стоимости доставки</h4>
+                    <div class="calc-params">
+                        <p><strong>Общий вес:</strong> <span id="total-weight">0</span> кг</p>
+                        <p><strong>Общий объем:</strong> <span id="total-volume">0</span> м³</p>
+                        <p><strong>Количество товаров:</strong> <span id="products-count">0</span> шт.</p>
+                        <button type="button" class="calc-btn" onclick="calculateDelivery()">Рассчитать стоимость доставки</button>
+                    </div>
+                    <div class="delivery-price-display">
+                        <label><strong>Стоимость доставки (₽):</strong></label>
+                        <input type="number" id="delivery-price-input" class="form-control" step="10" style="width: 150px; display: inline-block; margin-left: 10px;">
+                        <button type="button" class="save-price-btn" onclick="saveDeliveryPrice()">Сохранить</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Выберите курьера:</label>
+                    <select id="courier-select" class="form-control">
+                        <option value="">-- Выберите курьера --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group buttons-group">
+                    <button onclick="confirmAssign()" class="action-btn add-btn">Назначить курьера</button>
+                    <button onclick="closeAssignModal()" class="action-btn refresh-btn">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/manager.js"></script>
+</body>
+</html>

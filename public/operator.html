@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель оператора</title>
+    <link rel="stylesheet" href="/css/operator.css">
+</head>
+<body>
+    <header class="operator-header">
+        <div class="header-left">
+            <h1>Панель оператора</h1>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-info-block">
+                <div id="user-fullname" class="user-fullname">Оператор</div>
+                <div id="user-role" class="user-role">Оператор</div>
+            </div>
+            
+            <a href="/" class="logout-btn">Выйти</a>
+        </div>
+    </header>
+
+    <nav class="operator-nav">
+        <ul class="nav-tabs">
+            <li><button class="tab-btn active" data-tab="orders">Заказы</button></li>
+            <li><button class="tab-btn" data-tab="clients">Клиенты</button></li>
+            <li><button class="tab-btn" data-tab="new-order">Новый заказ</button></li>
+            <li><button class="tab-btn" data-tab="new-client">Новый клиент</button></li>
+        </ul>
+    </nav>
+
+    <div class="operator-container">
+        <!-- Вкладка заказов -->
+        <div id="orders-tab" class="tab-content active">
+            <div class="admin-actions">
+                <button class="action-btn refresh-btn" onclick="loadAllOrders()">Обновить</button>
+            </div>
+            <h2>Все заказы</h2>
+            <div id="orders-container" class="orders-list">
+                <div class="loading">Загрузка заказов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка клиентов -->
+        <div id="clients-tab" class="tab-content">
+            <div class="admin-actions">
+                <button class="action-btn refresh-btn" onclick="loadClients()">Обновить</button>
+            </div>
+            <h2>Список клиентов</h2>
+            <div id="clients-container" class="clients-grid">
+                <div class="loading">Загрузка клиентов...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка нового заказа -->
+        <div id="new-order-tab" class="tab-content">
+            <h2>Оформление нового заказа</h2>
+            <form id="order-form" class="order-form">
+                <div class="form-group">
+                    <label>Клиент:</label>
+                    <select id="client_id" class="form-control" required>
+                        <option value="">-- Выберите клиента --</option>
+                    </select>
+                    <button type="button" class="small-btn" onclick="showNewClientModal()">+ Новый клиент</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Адрес доставки:</label>
+                    <input type="text" id="delivery_address" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Стоимость доставки (₽):</label>
+                    <input type="number" step="0.01" id="delivery_price" class="form-control" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label>Товары:</label>
+                    <div id="order-items-container">
+                        <div class="order-item-row">
+                            <select class="product-select" style="width: 60%;" required>
+                                <option value="">-- Выберите товар --</option>
+                            </select>
+                            <input type="number" class="quantity-input" placeholder="Кол-во" style="width: 25%;" min="1" value="1">
+                            <button type="button" class="remove-item-btn" onclick="removeOrderItem(this)">×</button>
+                        </div>
+                    </div>
+                    <button type="button" class="add-item-btn" onclick="addOrderItem()">+ Добавить товар</button>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="action-btn add-btn">Оформить заказ</button>
+                    <button type="reset" class="action-btn refresh-btn" onclick="resetOrderForm()">Очистить</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Вкладка нового клиента -->
+        <div id="new-client-tab" class="tab-content">
+            <h2>Регистрация нового клиента</h2>
+            <form id="client-form" class="client-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Фамилия:</label>
+                        <input type="text" id="last_name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Имя:</label>
+                        <input type="text" id="first_name" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Отчество:</label>
+                    <input type="text" id="patronymic" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Телефон:</label>
+                    <input type="tel" id="phone" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Адрес:</label>
+                    <textarea id="address" class="form-control" rows="2"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Логин для входа:</label>
+                        <input type="text" id="login" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль:</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="action-btn add-btn">Зарегистрировать клиента</button>
+                    <button type="reset" class="action-btn refresh-btn" onclick="resetClientForm()">Очистить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для редактирования заказа -->
+    <div id="edit-order-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Редактирование заказа</h3>
+                <span class="close-btn" onclick="closeEditOrderModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="edit-order-form">
+                    <input type="hidden" id="edit_order_id">
+                    
+                    <div class="form-group">
+                        <label>Адрес доставки:</label>
+                        <input type="text" id="edit_delivery_address" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Стоимость доставки (₽):</label>
+                        <input type="number" step="0.01" id="edit_delivery_price" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Товары:</label>
+                        <div id="edit-order-items-container"></div>
+                        <button type="button" class="add-item-btn" onclick="addEditOrderItem()">+ Добавить товар</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="action-btn add-btn">Сохранить изменения</button>
+                        <button type="button" class="delete-btn" onclick="deleteOrder()">Отменить заказ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/operator.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет клиента</title>
+    <link rel="stylesheet" href="/css/client.css">
+</head>
+<body>
+    <header class="client-header">
+        <div class="header-left">
+            <h1>Личный кабинет клиента</h1>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-info-block">
+                <div id="user-fullname" class="user-fullname">Загрузка ФИО...</div>
+                <div id="user-role" class="user-role">Загрузка роли...</div>
+            </div>
+            
+            <a href="/" class="logout-btn">Выйти</a>
+        </div>
+    </header>
+
+    <nav class="client-nav">
+        <ul class="nav-tabs">
+            <li><button class="tab-btn active" data-tab="products">Товары</button></li>
+            <li><button class="tab-btn" data-tab="cart">Корзина (<span id="cart-count">0</span>)</button></li>
+            <li><button class="tab-btn" data-tab="orders">Мои заказы</button></li>
+        </ul>
+    </nav>
+
+    <div class="client-container">
+        <!-- Вкладка товаров -->
+        <div id="products-tab" class="tab-content active">
+            <h2>Каталог товаров</h2>
+            <div id="products-container" class="products-grid">
+                <div class="loading">Загрузка товаров...</div>
+            </div>
+        </div>
+
+        <!-- Вкладка корзины -->
+        <div id="cart-tab" class="tab-content">
+            <h2>Корзина</h2>
+            <div id="cart-container" class="cart-container">
+                <div class="empty-cart">Корзина пуста</div>
+            </div>
+        </div>
+
+        <!-- Вкладка заказов -->
+        <div id="orders-tab" class="tab-content">
+            <h2>Мои заказы</h2>
+            <div id="orders-container" class="orders-list">
+                <div class="loading">Загрузка заказов...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно оформления заказа -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Оформление заказа</h3>
+            <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label>Адрес доставки:</label>
+                    <input type="text" id="delivery_address" class="form-control" required placeholder="Улица, дом, квартира">
+                </div>
+                
+                <div class="cart-summary">
+                    <h4>Ваш заказ:</h4>
+                    <div id="cart-items-summary"></div>
+                    <div class="total-summary">
+                        <p><strong>Товары:</strong> <span id="cart-products-total">0</span> ₽</p>
+                        <p><strong>Доставка:</strong> <span id="cart-delivery-summary">Будет рассчитана менеджером</span></p>
+                        <p><strong>Итого:</strong> <span id="cart-total-summary">0</span> ₽</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="action-btn add-btn">Подтвердить заказ</button>
+                    <button type="button" class="action-btn refresh-btn" onclick="closeCheckoutModal()">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="/js/client.js"></script>
+</body>
+</html>
