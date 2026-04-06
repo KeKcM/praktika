@@ -2366,6 +2366,58 @@ app.post('/api/admin/finish-all-orders', async (req, res) => {
     }
 });
 
+app.post('/api/calculate-delivery', async (req, res) => {
+    try {
+        const { items } = req.body;
+        
+        if (!items || items.length === 0) {
+            return res.json({ success: false, error: 'Нет товаров для расчета' });
+        }
+        
+        // Получаем информацию о товарах
+        let totalWeight = 0;
+        let totalVolume = 0;
+        let uniqueProducts = items.length;
+        
+        for (const item of items) {
+            const productResult = await db.query(`
+                SELECT weight_kg, volume_m3 FROM products WHERE id = $1
+            `, [item.product_id]);
+            
+            if (productResult.rows.length > 0) {
+                totalWeight += (productResult.rows[0].weight_kg || 0) * item.quantity;
+                totalVolume += (productResult.rows[0].volume_m3 || 0) * item.quantity;
+            }
+        }
+        
+        // Базовая стоимость доставки
+        let basePrice = 200;
+        
+        // Надбавка за вес (каждые 5 кг +50 руб)
+        basePrice += Math.floor(totalWeight / 5) * 50;
+        
+        // Надбавка за объем (каждые 0.1 м³ +30 руб)
+        basePrice += Math.floor(totalVolume / 0.1) * 30;
+        
+        // Надбавка за количество уникальных товаров
+        basePrice += uniqueProducts * 20;
+        
+        // Максимальная стоимость доставки - 1000 руб
+        const finalPrice = Math.min(basePrice, 1000);
+        
+        res.json({ 
+            success: true, 
+            delivery_price: finalPrice,
+            weight: totalWeight.toFixed(2),
+            volume: totalVolume.toFixed(3),
+            message: `Рассчитано: вес ${totalWeight.toFixed(2)} кг, объем ${totalVolume.toFixed(3)} м³, стоимость доставки ${finalPrice} руб.`
+        });
+    } catch (err) {
+        console.error('Ошибка расчета доставки:', err);
+        res.status(500).json({ success: false, error: 'Ошибка сервера' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Сервер запущен: http://localhost:${PORT}`);
 });
