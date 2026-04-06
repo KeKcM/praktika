@@ -178,7 +178,7 @@ async function editProduct(id) {
         
         document.getElementById('modal-title').textContent = 'Редактирование товара';
         document.getElementById('form-fields').innerHTML = formHtml;
-        document.getElementById('modal').style.display = 'block';
+        openModal(); 
     } catch (error) {
         alert('Ошибка загрузки данных товара');
     }
@@ -1359,8 +1359,16 @@ async function restoreFromFile(filename) {
     }
 }
 
+function openModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    document.body.classList.add('modal-open'); // Блокируем прокрутку страницы
+}
+
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open'); // Восстанавливаем прокрутку
     currentEditId = null;
     currentEntityType = null;
 }
@@ -1424,3 +1432,4 @@ async function finishAllOrders() {
         alert('Ошибка при завершении заказов');
     }
 }
+
