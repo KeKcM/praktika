@@ -1,6 +1,4 @@
-"node_modules/" 
-"backups/" 
-".env" 
-"*.log" 
-ROOT/backups/ 
+node_modules/ 
 backups/ 
+.env 
+*.log 

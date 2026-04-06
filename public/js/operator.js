@@ -615,3 +615,102 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+
+// Расчет стоимости доставки
+async function calculateDeliveryPrice() {
+    // Собираем товары из формы
+    const items = [];
+    const rows = document.querySelectorAll('#order-items-container .order-item-row');
+    
+    for (const row of rows) {
+        const productSelect = row.querySelector('.product-select');
+        const quantityInput = row.querySelector('.quantity-input');
+        
+        const productId = productSelect.value;
+        const quantity = parseInt(quantityInput.value);
+        
+        if (productId && quantity && quantity > 0) {
+            items.push({
+                product_id: parseInt(productId),
+                quantity: quantity
+            });
+        }
+    }
+    
+    if (items.length === 0) {
+        alert('Добавьте хотя бы один товар для расчета доставки');
+        return;
+    }
+    
+    try {
+        const response = await fetch('/api/calculate-delivery', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: items })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Устанавливаем рассчитанную стоимость
+            document.getElementById('delivery_price').value = result.delivery_price;
+            
+            // Показываем информацию о расчете
+            document.getElementById('calc-weight').textContent = result.weight;
+            document.getElementById('calc-volume').textContent = result.volume;
+            document.getElementById('calc-items').textContent = items.length;
+            document.getElementById('delivery-calculation-info').style.display = 'block';
+            
+            // Через 5 секунд скрываем информацию
+            setTimeout(() => {
+                document.getElementById('delivery-calculation-info').style.display = 'none';
+            }, 5000);
+            
+            alert(result.message);
+        } else {
+            alert(result.error);
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Ошибка при расчете стоимости доставки');
+    }
+}
+
+// Также добавим автоматический пересчет при изменении товаров
+function updateDeliveryCalculation() {
+    // Скрываем информацию при изменении состава заказа
+    document.getElementById('delivery-calculation-info').style.display = 'none';
+}
+
+// Модифицируем функции добавления/удаления товаров
+const originalAddOrderItem = addOrderItem;
+addOrderItem = function() {
+    originalAddOrderItem();
+    updateDeliveryCalculation();
+};
+
+const originalRemoveOrderItem = removeOrderItem;
+removeOrderItem = function(btn) {
+    originalRemoveOrderItem(btn);
+    updateDeliveryCalculation();
+};
+
+// Обновляем функцию обновления выпадающих списков
+function updateAllProductSelects() {
+    const selects = document.querySelectorAll('.product-select');
+    selects.forEach(select => {
+        const currentValue = select.value;
+        select.innerHTML = '<option value="">-- Выберите товар --</option>';
+        
+        productsList.forEach(product => {
+            select.innerHTML += `<option value="${product.id}" data-stock="${product.stock_quantity}">
+                ${product.product_name} - ${formatPrice(product.current_price)} ₽ (в наличии: ${product.stock_quantity} ${product.unit})
+            </option>`;
+        });
+        
+        if (currentValue) select.value = currentValue;
+    });
+    
+    // При изменении состава товаров обновляем расчет
+    updateDeliveryCalculation();
+}
