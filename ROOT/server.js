@@ -2418,6 +2418,23 @@ app.post('/api/calculate-delivery', async (req, res) => {
     }
 });
 
+// После инициализации db, но до app.listen
+(async () => {
+    const tables = ['clients', 'orders', 'products', 'users', 'couriers', 'employees', 'warehouses', 'status'];
+    for (const table of tables) {
+        try {
+            const maxIdRes = await db.query(`SELECT COALESCE(MAX(id), 0) as max_id FROM ${table}`);
+            const maxId = maxIdRes.rows[0].max_id;
+            if (maxId > 0) {
+                await db.query(`ALTER SEQUENCE ${table}_id_seq RESTART WITH ${maxId + 1}`);
+                console.log(`Sequence ${table}_id_seq синхронизирована (max_id = ${maxId})`);
+            }
+        } catch (e) {
+            // таблицы может не быть, игнорируем
+        }
+    }
+})();
+
 app.listen(PORT, () => {
     console.log(`Сервер запущен: http://localhost:${PORT}`);
 });
