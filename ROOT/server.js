@@ -564,7 +564,16 @@ app.post('/api/courier/update-status', async (req, res) => {
         if (newStatusId === 7) { // В пути
             await db.query(`UPDATE routes SET sending_time = NOW() WHERE order_id = $1`, [orderId]);
         } else if (newStatusId === 8) { // Доставлен
-            await db.query(`UPDATE routes SET delivery_time = NOW() WHERE order_id = $1`, [orderId]);
+             await db.query(`UPDATE routes SET delivery_time = NOW() WHERE order_id = $1`, [orderId]);
+            const orderTotal = await db.query(`
+                SELECT COALESCE(products_total, 0) + COALESCE(delivery_price, 0) as total
+                FROM orders WHERE id = $1
+            `, [orderId]);
+            const totalAmount = orderTotal.rows[0].total;
+            await db.query(`
+                INSERT INTO payments (order_id, total_amount, payment_type, payment_date)
+                VALUES ($1, $2, $3, NOW())
+            `, [orderId, totalAmount, paymentType || 'наличными']);
         } else if (newStatusId === 6) {
             await db.query(`UPDATE couriers SET employment_status = 'свободен' WHERE id = $1`, [courierId]);
         }
