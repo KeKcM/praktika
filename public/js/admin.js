@@ -379,6 +379,27 @@ async function editCourier(id) {
         currentEditId = id;
         currentEntityType = 'couriers';
         
+        // Формируем HTML для списка телефонов
+        let phonesHtml = '<div id="phones-list">';
+        if (courier.phone_numbers && courier.phone_numbers.length) {
+            courier.phone_numbers.forEach((phone, idx) => {
+                phonesHtml += `
+                    <div class="phone-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="text" name="phone_numbers[]" value="${escapeHtml(phone)}" placeholder="Номер телефона" style="flex: 1;">
+                        <button type="button" class="delete-btn" onclick="removePhone(this)">Удалить</button>
+                    </div>
+                `;
+            });
+        } else {
+            phonesHtml += `
+                <div class="phone-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" name="phone_numbers[]" placeholder="Номер телефона" style="flex: 1;">
+                    <button type="button" class="delete-btn" onclick="removePhone(this)">Удалить</button>
+                </div>
+            `;
+        }
+        phonesHtml += '</div><button type="button" class="add-btn" onclick="addPhone()" style="margin-top: 5px;">+ Добавить телефон</button>';
+        
         const formHtml = `
             <div class="form-row">
                 <div class="form-group">
@@ -395,8 +416,8 @@ async function editCourier(id) {
                 <input type="text" name="patronymic" value="${escapeHtml(courier.patronymic || '')}">
             </div>
             <div class="form-group">
-                <label>Телефон:</label>
-                <input type="tel" name="phone_number" value="${courier.phone_number || ''}">
+                <label>Телефон(ы):</label>
+                ${phonesHtml}
             </div>
             <div class="form-group">
                 <label>Тип транспорта:</label>
@@ -1029,48 +1050,54 @@ function showAddModal(entityType) {
             `;
             break;
             
-        case 'couriers':
-            title = 'Добавление курьера';
-            formHtml = `
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Фамилия:</label>
-                        <input type="text" name="last_name" required>
+            case 'couriers':
+        title = 'Добавление курьера';
+        formHtml = `
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Фамилия:</label>
+                    <input type="text" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Имя:</label>
+                    <input type="text" name="first_name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Отчество:</label>
+                <input type="text" name="patronymic">
+            </div>
+            <div class="form-group">
+                <label>Телефон(ы):</label>
+                <div id="phones-list">
+                    <div class="phone-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="text" name="phone_numbers[]" placeholder="Номер телефона" style="flex: 1;">
+                        <button type="button" class="delete-btn" onclick="removePhone(this)">Удалить</button>
                     </div>
-                    <div class="form-group">
-                        <label>Имя:</label>
-                        <input type="text" name="first_name" required>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Отчество:</label>
-                    <input type="text" name="patronymic">
-                </div>
-                <div class="form-group">
-                    <label>Телефон:</label>
-                    <input type="tel" name="phone_number">
-                </div>
-                <div class="form-group">
-                    <label>Тип транспорта:</label>
-                    <input type="text" name="transport_type">
-                </div>
-                <div class="form-group">
-                    <label>Статус занятости:</label>
-                    <select name="employment_status">
-                        <option value="свободен">Свободен</option>
-                        <option value="занят">Занят</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Логин для входа:</label>
-                    <input type="text" name="login" required>
-                </div>
-                <div class="form-group">
-                    <label>Пароль:</label>
-                    <input type="password" name="password" required>
-                </div>
-            `;
-            break;
+                <button type="button" class="add-btn" onclick="addPhone()">+ Добавить телефон</button>
+            </div>
+            <div class="form-group">
+                <label>Тип транспорта:</label>
+                <input type="text" name="transport_type">
+            </div>
+            <div class="form-group">
+                <label>Статус занятости:</label>
+                <select name="employment_status">
+                    <option value="свободен">Свободен</option>
+                    <option value="занят">Занят</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Логин для входа:</label>
+                <input type="text" name="login" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль:</label>
+                <input type="password" name="password" required>
+            </div>
+        `;
+        break;
             
         case 'employees':
             title = 'Добавление сотрудника';
@@ -1200,11 +1227,25 @@ async function handleFormSubmit(e) {
     
     const formData = new FormData(e.target);
     const data = {};
-    formData.forEach((value, key) => {
-        if (value === 'true') data[key] = true;
-        else if (value === 'false') data[key] = false;
-        else data[key] = value;
-    });
+    const phoneNumbers = [];
+    
+    for (let [key, value] of formData.entries()) {
+        // Обрабатываем телефонные поля особо
+        if (key === 'phone_numbers[]') {
+            if (value.trim()) phoneNumbers.push(value);
+        } else {
+            if (value === 'true') data[key] = true;
+            else if (value === 'false') data[key] = false;
+            else data[key] = value;
+        }
+    }
+    
+    // Добавляем массив телефонов, если есть
+    if (phoneNumbers.length > 0) {
+        data.phone_numbers = phoneNumbers;
+    }
+    // Удаляем возможное поле phone_number, чтобы не конфликтовало
+    delete data.phone_number;
     
     try {
         let url = `/api/admin/${currentEntityType}`;
@@ -1217,9 +1258,7 @@ async function handleFormSubmit(e) {
         
         const response = await fetch(url, {
             method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         });
         
@@ -1229,7 +1268,6 @@ async function handleFormSubmit(e) {
             alert(currentEditId ? 'Данные обновлены' : 'Запись добавлена');
             closeModal();
             
-            // Перезагружаем текущую вкладку
             if (currentTab === 'products') loadProducts();
             else if (currentTab === 'clients') loadClients();
             else if (currentTab === 'couriers') loadCouriers();
@@ -1241,6 +1279,7 @@ async function handleFormSubmit(e) {
             alert(result.error);
         }
     } catch (error) {
+        console.error(error);
         alert('Ошибка при сохранении данных');
     }
 }
@@ -1433,3 +1472,26 @@ async function finishAllOrders() {
     }
 }
 
+function addPhone() {
+    const container = document.getElementById('phones-list');
+    if (!container) return;
+    const newRow = document.createElement('div');
+    newRow.className = 'phone-row';
+    newRow.style.display = 'flex';
+    newRow.style.gap = '10px';
+    newRow.style.marginBottom = '10px';
+    newRow.innerHTML = `
+        <input type="text" name="phone_numbers[]" placeholder="Номер телефона" style="flex: 1;">
+        <button type="button" class="delete-btn" onclick="removePhone(this)">Удалить</button>
+    `;
+    container.appendChild(newRow);
+}
+
+function removePhone(btn) {
+    const row = btn.closest('.phone-row');
+    if (row && row.parentElement.children.length > 1) {
+        row.remove();
+    } else {
+        alert('Должен быть хотя бы один телефон');
+    }
+}

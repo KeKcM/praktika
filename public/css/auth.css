@@ -18,36 +18,60 @@ body {
     max-width: 500px;
     padding: 20px;
 }
-
 .auth-card {
     background-color: white;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
 }
-
+.auth-tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+}
+.auth-tabs .tab-btn.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
 .auth-form {
-    width: 100%;
+    display: none;
 }
-
+.auth-form.active {
+    display: block;
+}
+.error-message {
+    background-color: #ffeaea;
+    color: #c0392b;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+.form-row .form-group {
+    flex: 1;
+}
 .form-group {
     margin-bottom: 20px;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 8px;
     color: #555;
     font-weight: bold;
 }
-
 .form-control {
     width: 100%;
     padding: 12px;
@@ -55,12 +79,10 @@ h2 {
     border-radius: 5px;
     font-size: 1rem;
 }
-
 .form-control:focus {
     outline: none;
     border-color: #3498db;
 }
-
 .btn {
     display: block;
     width: 100%;
@@ -72,20 +94,16 @@ h2 {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
     text-align: center;
 }
-
 .btn:hover {
     background-color: #2980b9;
 }
-
 hr {
     margin: 25px 0;
     border: none;
     border-top: 1px solid #eee;
 }
-
 .guest-btn {
     display: block;
     width: 100%;
@@ -98,17 +116,6 @@ hr {
     font-size: 1rem;
     font-weight: bold;
 }
-
 .guest-btn:hover {
     background-color: #27ae60;
-}
-
-ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 8px;
-    color: #555;
 }

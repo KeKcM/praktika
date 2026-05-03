@@ -7,27 +7,55 @@
 </head>
 <body>
     <header class="courier-header">
-        <div class="header-left">
-            <h1>Панель курьера</h1>
-        </div>
-        
+        <div class="header-left"><h1>Панель курьера</h1></div>
         <div class="header-right">
             <div class="user-info-block">
                 <div id="user-fullname" class="user-fullname">Курьер</div>
                 <div id="user-role" class="user-role">Курьер</div>
             </div>
-            
             <a href="/" class="logout-btn">Выйти</a>
         </div>
     </header>
 
+    <nav class="courier-nav">
+        <ul class="nav-tabs">
+            <li><button class="tab-btn active" data-tab="available">Доступные заказы</button></li>
+            <li><button class="tab-btn" data-tab="my">Мои заказы</button></li>
+        </ul>
+    </nav>
+
     <div class="courier-container">
-        <h2>Мои заказы</h2>
-        <div id="orders-container" class="orders-list">
-            <div class="loading">Загрузка заказов...</div>
+        <div id="available-tab" class="tab-content active">
+            <h2>Доступные для доставки заказы</h2>
+            <div id="available-orders-container" class="orders-list"><div class="loading">Загрузка...</div></div>
+        </div>
+        <div id="my-tab" class="tab-content">
+            <h2>Мои заказы</h2>
+            <div id="my-orders-container" class="orders-list"><div class="loading">Загрузка...</div></div>
         </div>
     </div>
-
+    <div id="payment-modal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Выберите способ оплаты</h3>
+                <span class="close-btn" onclick="closePaymentModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Способ оплаты для заказа №<span id="payment_order_id"></span></label>
+                    <select id="payment_type" class="form-control">
+                        <option value="наличными">Наличные</option>
+                        <option value="картой">Банковская карта</option>
+                        <option value="онлайн">Онлайн (предоплата)</option>
+                    </select>
+                </div>
+                <div class="form-group buttons-group">
+                    <button onclick="confirmDeliveryWithPayment()" class="action-btn add-btn">Подтвердить доставку</button>
+                    <button onclick="closePaymentModal()" class="action-btn refresh-btn">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/js/courier.js"></script>
 </body>
 </html>

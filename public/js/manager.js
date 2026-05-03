@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('user-role').textContent = userRoleName;
     
     setupTabs();
-    loadOrdersForAssignment(); // Загружаем заказы для назначения
     loadAllOrders(); // Загружаем все заказы
     loadManagerProducts(); // Загружаем товары
     loadCouriers(); // Загружаем курьеров
@@ -33,9 +32,7 @@ function setupTabs() {
             document.getElementById(`${tabId}-tab`).classList.add('active');
             
             // Загружаем данные для выбранной вкладки
-            if (tabId === 'assign') {
-                loadOrdersForAssignment();
-            } else if (tabId === 'orders') {
+             if (tabId === 'orders') {
                 loadAllOrders();
             } else if (tabId === 'products') {
                 loadManagerProducts();
@@ -44,99 +41,6 @@ function setupTabs() {
             }
         });
     });
-}
-
-// ==================== НАЗНАЧЕНИЕ КУРЬЕРОВ ====================
-async function loadOrdersForAssignment() {
-    const container = document.getElementById('assign-container');
-    container.innerHTML = '<div class="loading">Загрузка заказов...</div>';
-    
-    try {
-        const response = await fetch('/api/manager/orders-without-courier');
-        const result = await response.json();
-        
-        if (result.success) {
-            displayOrdersForAssignment(result.orders);
-        } else {
-            container.innerHTML = `<div class="error">${result.error}</div>`;
-        }
-    } catch (error) {
-        console.error('Ошибка:', error);
-        container.innerHTML = `<div class="error">Ошибка загрузки заказов: ${error.message}</div>`;
-    }
-}
-
-function displayOrdersForAssignment(orders) {
-    const container = document.getElementById('assign-container');
-    
-    if (!orders || orders.length === 0) {
-        container.innerHTML = '<div class="no-orders">Нет заказов, ожидающих назначения курьера</div>';
-        return;
-    }
-
-    container.innerHTML = orders.map(order => {
-        const orderDate = new Date(order.order_date).toLocaleDateString('ru-RU', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-        
-        const productsTotal = formatPrice(order.products_total);
-        const totalAmount = formatPrice(order.total_amount);
-        const deliveryPrice = formatPrice(order.delivery_price);
-        const totalWeight = parseFloat(order.total_weight) || 0;
-        const totalVolume = parseFloat(order.total_volume) || 0;
-        
-        return `
-            <div class="order-card" data-id="${order.id}">
-                <div class="order-header">
-                    <div>
-                        <span class="order-id">Заказ №${order.id}</span>
-                        <span class="order-date"> от ${orderDate}</span>
-                    </div>
-                    <span class="order-status status-new">Новый</span>
-                </div>
-                
-                <div class="order-details">
-                    <div class="order-info">
-                        <p><strong>Клиент:</strong> ${order.client_name}</p>
-                        <p><strong>Телефон:</strong> ${order.client_phone || 'Не указан'}</p>
-                        <p><strong>Адрес доставки:</strong> ${order.delivery_address}</p>
-                        <p><strong>Вес заказа:</strong> ${totalWeight.toFixed(2)} кг</p>
-                        <p><strong>Объем заказа:</strong> ${totalVolume.toFixed(3)} м³</p>
-                        <p><strong>Стоимость доставки:</strong> ${deliveryPrice} ₽</p>
-                    </div>
-                    
-                    <table class="order-items">
-                        <thead>
-                            <tr><th>Товар</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
-                        </thead>
-                        <tbody>
-                            ${order.items ? order.items.map(item => `
-                                <tr>
-                                    <td>${item.product_name || 'Товар'}</td>
-                                    <td>${item.quantity} шт.</td>
-                                    <td>${formatPrice(item.unit_price_at_order)} ₽</td>
-                                    <td>${formatPrice(item.total_price)} ₽</td>
-                                </tr>
-                            `).join('') : ''}
-                        </tbody>
-                    </table>
-                    
-                    <div class="order-total">
-                        <p><strong>Товары:</strong> ${productsTotal} ₽</p>
-                        <p><strong>Итого с доставкой:</strong> ${totalAmount} ₽</p>
-                    </div>
-                    
-                    <div class="card-actions">
-                        <button class="assign-btn" onclick="showAssignModal(${order.id})">Назначить курьера</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
 }
 
 // ==================== ВСЕ ЗАКАЗЫ ====================
@@ -218,6 +122,7 @@ function displayAllOrders(orders) {
                     
                     <div class="order-total">
                         <p><strong>Товары:</strong> ${productsTotal} ₽</p>
+                        <p><strong>Доставка:</strong> ${formatPrice(order.delivery_price)} ₽</p>
                         <p><strong>Итого:</strong> ${totalAmount} ₽</p>
                     </div>
                 </div>
@@ -337,179 +242,6 @@ function displayCouriers(couriers) {
     }).join('');
 }
 
-// ==================== МОДАЛЬНОЕ ОКНО НАЗНАЧЕНИЯ ====================
-let currentOrderToAssign = null;
-let currentOrderData = null;
-
-async function showAssignModal(orderId) {
-    currentOrderToAssign = orderId;
-    
-    try {
-        // Получаем информацию о заказе
-        const orderResponse = await fetch('/api/manager/orders-without-courier');
-        const orderResult = await orderResponse.json();
-        const order = orderResult.orders.find(o => o.id === orderId);
-        currentOrderData = order;
-        
-        if (order) {
-            const orderDate = new Date(order.order_date).toLocaleDateString('ru-RU');
-            const productsTotal = formatPrice(order.products_total);
-            const totalAmount = formatPrice(order.total_amount);
-            const deliveryPrice = formatPrice(order.delivery_price);
-            
-            const totalWeight = parseFloat(order.total_weight) || 0;
-            const totalVolume = parseFloat(order.total_volume) || 0;
-            const productsCount = order.items ? order.items.length : 0;
-            
-            document.getElementById('order-info').innerHTML = `
-                <div class="order-info">
-                    <p><strong>Заказ №${order.id}</strong> от ${orderDate}</p>
-                    <p><strong>Клиент:</strong> ${order.client_name}</p>
-                    <p><strong>Телефон:</strong> ${order.client_phone || 'Не указан'}</p>
-                    <p><strong>Адрес доставки:</strong> ${order.delivery_address}</p>
-                    <p><strong>Товары:</strong> ${productsTotal} ₽</p>
-                    <p><strong>Текущая стоимость доставки:</strong> <span id="current-delivery-price">${deliveryPrice}</span> ₽</p>
-                    <p><strong>Итого:</strong> ${totalAmount} ₽</p>
-                </div>
-            `;
-            
-            document.getElementById('total-weight').textContent = totalWeight.toFixed(2);
-            document.getElementById('total-volume').textContent = totalVolume.toFixed(3);
-            document.getElementById('products-count').textContent = productsCount;
-            document.getElementById('delivery-price-input').value = order.delivery_price || 0;
-        }
-        
-        // Получаем список свободных курьеров
-        const couriersResponse = await fetch('/api/manager/available-couriers');
-        const couriers = await couriersResponse.json();
-        
-        const select = document.getElementById('courier-select');
-        select.innerHTML = '<option value="">-- Выберите курьера --</option>';
-        
-        if (couriers.length === 0) {
-            select.innerHTML = '<option value="">Нет свободных курьеров</option>';
-        } else {
-            couriers.forEach(courier => {
-                const fullName = `${courier.last_name} ${courier.first_name} ${courier.patronymic || ''}`.trim();
-                select.innerHTML += `<option value="${courier.id}">${fullName} - ${courier.transport_type || 'транспорт не указан'}</option>`;
-            });
-        }
-        
-        document.getElementById('assign-modal').style.display = 'block';
-    } catch (error) {
-        console.error('Ошибка:', error);
-        alert('Ошибка загрузки данных: ' + error.message);
-    }
-}
-
-async function calculateDelivery() {
-    if (!currentOrderToAssign) return;
-    
-    try {
-        const response = await fetch('/api/manager/calculate-delivery', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ orderId: currentOrderToAssign })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            document.getElementById('delivery-price-input').value = result.delivery_price;
-            document.getElementById('current-delivery-price').textContent = formatPrice(result.delivery_price);
-            alert(result.message);
-        } else {
-            alert(result.error);
-        }
-    } catch (error) {
-        alert('Ошибка расчета: ' + error.message);
-    }
-}
-
-async function saveDeliveryPrice() {
-    if (!currentOrderToAssign) return;
-    
-    const deliveryPrice = parseFloat(document.getElementById('delivery-price-input').value);
-    
-    if (isNaN(deliveryPrice) || deliveryPrice < 0) {
-        alert('Введите корректную сумму');
-        return;
-    }
-    
-    try {
-        const response = await fetch('/api/manager/update-delivery-price', {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ orderId: currentOrderToAssign, delivery_price: deliveryPrice })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            document.getElementById('current-delivery-price').textContent = formatPrice(deliveryPrice);
-            alert('Стоимость доставки сохранена');
-        } else {
-            alert(result.error);
-        }
-    } catch (error) {
-        alert('Ошибка сохранения: ' + error.message);
-    }
-}
-
-async function confirmAssign() {
-    const courierId = document.getElementById('courier-select').value;
-    const deliveryPrice = parseFloat(document.getElementById('delivery-price-input').value);
-    
-    if (!courierId) {
-        alert('Выберите курьера');
-        return;
-    }
-    
-    if (isNaN(deliveryPrice) || deliveryPrice < 0) {
-        alert('Укажите стоимость доставки');
-        return;
-    }
-    
-    try {
-        // Сначала сохраняем стоимость доставки
-        await fetch('/api/manager/update-delivery-price', {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ orderId: currentOrderToAssign, delivery_price: deliveryPrice })
-        });
-        
-        // Затем назначаем курьера
-        const response = await fetch('/api/manager/assign-courier', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                orderId: currentOrderToAssign,
-                courierId: parseInt(courierId)
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            alert(`Курьер успешно назначен на заказ!\nСтоимость доставки: ${formatPrice(deliveryPrice)} ₽`);
-            closeAssignModal();
-            loadOrdersForAssignment();
-            loadAllOrders();
-            loadCouriers();
-        } else {
-            alert(result.error);
-        }
-    } catch (error) {
-        alert('Ошибка при назначении курьера: ' + error.message);
-    }
-}
-
-function closeAssignModal() {
-    document.getElementById('assign-modal').style.display = 'none';
-    currentOrderToAssign = null;
-    currentOrderData = null;
-}
-
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
 function getStatusClass(status) {
     if (!status) return '';
@@ -535,4 +267,130 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+async function generateReport(type) {
+    const dateFrom = document.getElementById('report_date_from')?.value || '';
+    const dateTo = document.getElementById('report_date_to')?.value || '';
+    const container = document.getElementById('report_result');
+    container.innerHTML = '<div class="loading">Загрузка...</div>';
+    
+    try {
+        let url = `/api/manager/report/${type}?`;
+        if (dateFrom) url += `date_from=${dateFrom}&`;
+        if (dateTo) url += `date_to=${dateTo}&`;
+        
+        const response = await fetch(url);
+        const result = await response.json();
+        if (!result.success) throw new Error(result.error || 'Ошибка загрузки');
+        
+        if (type === 'orders') displayOrdersReport(result.data);
+        else if (type === 'couriers') displayCouriersReport(result.data);
+        else if (type === 'finance') displayFinanceReport(result.data, result.summary);
+    } catch (err) {
+        container.innerHTML = `<div class="error">${err.message}</div>`;
+    }
+}
+
+function displayOrdersReport(orders) {
+    const container = document.getElementById('report_result');
+    if (!orders || orders.length === 0) {
+        container.innerHTML = '<div class="no-data">Нет заказов за выбранный период</div>';
+        return;
+    }
+    let totalProducts = 0, totalDelivery = 0, totalSum = 0;
+    const rows = orders.map(order => {
+        totalProducts += parseFloat(order.products_total);
+        totalDelivery += parseFloat(order.delivery_price);
+        totalSum += parseFloat(order.total_amount);
+        return `
+            <tr>
+                <td>${order.id}</td>
+                <td>${new Date(order.order_date).toLocaleDateString('ru-RU')}</td>
+                <td>${escapeHtml(order.client_name)}</td>
+                <td>${escapeHtml(order.delivery_address)}</td>
+                <td><span class="status-badge ${getStatusClass(order.status)}">${order.status}</span></td>
+                <td>${formatPrice(order.delivery_price)} ₽</td>
+                <td>${formatPrice(order.products_total)} ₽</td>
+                <td><strong>${formatPrice(order.total_amount)} ₽</strong></td>
+            </tr>
+        `;
+    }).join('');
+    container.innerHTML = `
+        <div class="report-summary">
+            <p><strong>Итого за период:</strong></p>
+            <p>Сумма товаров: ${formatPrice(totalProducts)} ₽</p>
+            <p>Стоимость доставки: ${formatPrice(totalDelivery)} ₽</p>
+            <p>Общая выручка: ${formatPrice(totalSum)} ₽</p>
+        </div>
+        <table class="report-table">
+            <thead>
+                <tr><th>№ заказа</th><th>Дата</th><th>Клиент</th><th>Адрес</th><th>Статус</th><th>Доставка</th><th>Товары</th><th>Итого</th></tr>
+            </thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
+}
+
+function displayCouriersReport(couriers) {
+    const container = document.getElementById('report_result');
+    if (!couriers || couriers.length === 0) {
+        container.innerHTML = '<div class="no-data">Нет данных по курьерам за выбранный период</div>';
+        return;
+    }
+    const rows = couriers.map(c => `
+        <tr>
+            <td>${escapeHtml(c.courier_name)}</td>
+            <td>${c.total_orders}</td>
+            <td>${c.delivered_orders}</td>
+            <td>${c.cancelled_orders}</td>
+            <td>${formatPrice(c.total_earnings)} ₽</td>
+            <td>${c.avg_delivery_hours ? c.avg_delivery_hours + ' ч' : '-'}</td>
+        </tr>
+    `).join('');
+    container.innerHTML = `
+        <table class="report-table">
+            <thead>
+                <tr><th>Курьер</th><th>Всего заказов</th><th>Доставлено</th><th>Отменено</th><th>Заработок</th><th>Среднее время доставки</th></tr>
+            </thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
+}
+
+function displayFinanceReport(data, summary) {
+    const container = document.getElementById('report_result');
+    let html = `<div class="finance-summary">
+        <p><strong>Всего платежей:</strong> ${summary.total_payments || 0}</p>
+        <p><strong>Общая сумма:</strong> ${formatPrice(summary.grand_total || 0)} ₽</p>
+    </div>`;
+    if (data && data.length) {
+        html += `<table class="report-table">
+            <thead><tr><th>Способ оплаты</th><th>Количество</th><th>Сумма</th></tr></thead>
+            <tbody>`;
+        data.forEach(row => {
+            let typeName = row.payment_type;
+            if (typeName === 'наличными') typeName = 'Наличные';
+            else if (typeName === 'картой') typeName = 'Банковская карта';
+            else if (typeName === 'онлайн') typeName = 'Онлайн';
+            html += `<tr><td>${typeName}</td><td>${row.count}</td><td>${formatPrice(row.total_sum)} ₽</td></tr>`;
+        });
+        html += `</tbody></table>`;
+    } else {
+        html += `<div class="no-data">Нет платежей за выбранный период</div>`;
+    }
+    container.innerHTML = html;
+}
+
+function getStatusClass(status) {
+    if (!status) return '';
+    const s = status.toLowerCase();
+    if (s.includes('принят')) return 'status-new';
+    if (s.includes('ожидает') || s.includes('собирается')) return 'status-processing';
+    if (s.includes('готов к выдаче')) return 'status-ready';
+    if (s.includes('передан')) return 'status-processing';
+    if (s.includes('в пути')) return 'status-delivering';
+    if (s.includes('доставлен')) return 'status-delivered';
+    if (s.includes('отмен')) return 'status-cancelled';
+    return '';
 }

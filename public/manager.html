@@ -23,21 +23,12 @@
 
     <nav class="manager-nav">
         <ul class="nav-tabs">
-            <li><button class="tab-btn active" data-tab="assign">Назначение курьеров</button></li>
             <li><button class="tab-btn" data-tab="orders">Все заказы</button></li>
             <li><button class="tab-btn" data-tab="products">Товары</button></li>
             <li><button class="tab-btn" data-tab="couriers">Курьеры</button></li>
+            <li><button class="tab-btn" data-tab="reports">Отчёты</button></li>
         </ul>
     </nav>
-
-    <div class="manager-container">
-        <!-- Вкладка назначения курьеров -->
-        <div id="assign-tab" class="tab-content active">
-            <h2>Назначение курьеров на заказы</h2>
-            <div id="assign-container" class="assign-container">
-                <div class="loading">Загрузка заказов...</div>
-            </div>
-        </div>
 
         <!-- Вкладка всех заказов -->
         <div id="orders-tab" class="tab-content">
@@ -103,6 +94,18 @@
             </div>
         </div>
     </div>
+
+    <div id="reports-tab" class="tab-content">
+    <h2>Отчёты</h2>
+    <div class="report-filters">
+        <label>Период с: <input type="date" id="report_date_from"></label>
+        <label>по: <input type="date" id="report_date_to"></label>
+        <button onclick="generateReport('orders')">Отчёт по заказам</button>
+        <button onclick="generateReport('couriers')">Отчёт по курьерам</button>
+        <button onclick="generateReport('finance')">Финансовый отчёт</button>
+    </div>
+    <div id="report_result"></div>
+</div>
 
     <script src="/js/manager.js"></script>
 </body>

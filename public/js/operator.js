@@ -4,10 +4,8 @@ let productsList = [];
 document.addEventListener('DOMContentLoaded', function() {
     const userFullName = localStorage.getItem('userFullName') || 'Оператор';
     const userRoleName = localStorage.getItem('userRoleName') || 'Оператор';
-    
     document.getElementById('user-fullname').textContent = userFullName;
     document.getElementById('user-role').textContent = userRoleName;
-    
     setupTabs();
     loadAllOrders();
     loadProductsForSelect();
@@ -16,31 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setupTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
-    
     tabBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const tabId = this.getAttribute('data-tab');
             currentTab = tabId;
-            
             tabBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            document.querySelectorAll('.tab-content').forEach(c => {
-                c.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.getElementById(`${tabId}-tab`).classList.add('active');
-            
-            if (tabId === 'orders') {
-                loadAllOrders();
-            } else if (tabId === 'clients') {
-                loadClients();
-            } else if (tabId === 'new-order') {
+            if (tabId === 'orders') loadAllOrders();
+            else if (tabId === 'clients') loadClients();
+            else if (tabId === 'new-order') {
                 loadProductsForSelect();
                 loadClientsForSelect();
             }
         });
     });
 }
+
 
 // ==================== ЗАГРУЗКА ДАННЫХ ДЛЯ ФОРМ ====================
 async function loadProductsForSelect() {
@@ -419,33 +410,24 @@ async function loadAllOrders() {
     try {
         const response = await fetch('/api/orders/all');
         const result = await response.json();
-        
-        if (result.success) {
-            displayAllOrders(result.orders);
-        } else {
-            document.getElementById('orders-container').innerHTML = 
-                `<div class="error">${result.error}</div>`;
-        }
+        if (result.success) displayAllOrders(result.orders);
+        else document.getElementById('orders-container').innerHTML = `<div class="error">${result.error}</div>`;
     } catch (error) {
-        document.getElementById('orders-container').innerHTML = 
-            '<div class="error">Ошибка загрузки заказов</div>';
+        document.getElementById('orders-container').innerHTML = '<div class="error">Ошибка загрузки заказов</div>';
     }
 }
 
 function displayAllOrders(orders) {
     const container = document.getElementById('orders-container');
-    
     if (!orders || orders.length === 0) {
         container.innerHTML = '<div class="no-orders">Заказы не найдены</div>';
         return;
     }
-
     container.innerHTML = orders.map(order => {
         const orderDate = new Date(order.order_date).toLocaleDateString('ru-RU', {
             year: 'numeric', month: 'long', day: 'numeric',
             hour: '2-digit', minute: '2-digit'
         });
-        
         const productsTotal = formatPrice(order.products_total);
         const totalAmount = formatPrice(order.total_amount);
         const statusClass = getStatusClass(order.status);
@@ -459,7 +441,6 @@ function displayAllOrders(orders) {
                     </div>
                     <span class="order-status ${statusClass}">${order.status || 'Неизвестно'}</span>
                 </div>
-                
                 <div class="order-details">
                     <div class="order-info">
                         <p><strong>Клиент:</strong> ${order.client_name}</p>
@@ -467,7 +448,6 @@ function displayAllOrders(orders) {
                         <p><strong>Адрес доставки:</strong> ${order.delivery_address}</p>
                         <p><strong>Курьер:</strong> ${order.courier_name || 'не назначен'}</p>
                     </div>
-                    
                     <table class="order-items">
                         <thead><tr><th>Товар</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>
                         <tbody>
@@ -481,13 +461,21 @@ function displayAllOrders(orders) {
                             `).join('') : ''}
                         </tbody>
                     </table>
-                    
                     <div class="order-total">
                         <p><strong>Товары:</strong> ${productsTotal} ₽</p>
                         <p><strong>Доставка:</strong> ${formatPrice(order.delivery_price)} ₽</p>
                         <p><strong>Итого:</strong> ${totalAmount} ₽</p>
                     </div>
-                    
+                    ${order.status_id === 1 ? `
+                    <div class="card-actions">
+                        <button class="start-btn" onclick="startOrderProcessing(${order.id})">Начать сборку</button>
+                    </div>
+                    ` : ''}
+                    ${(order.status_id === 2 || order.status_id === 3) ? `
+                    <div class="card-actions">
+                        <button class="ready-btn" onclick="markOrderReady(${order.id})">Готов к выдаче</button>
+                    </div>
+                    ` : ''}
                     <div class="card-actions">
                         <button class="edit-btn" onclick="editOrder(${order.id})">Редактировать</button>
                     </div>
@@ -714,3 +702,33 @@ function updateAllProductSelects() {
     // При изменении состава товаров обновляем расчет
     updateDeliveryCalculation();
 }
+
+window.startOrderProcessing = async function(orderId) {
+    if (!confirm('Начать сборку заказа?')) return;
+    try {
+        const operatorLogin = localStorage.getItem('login');
+        const response = await fetch(`/api/operator/start-order/${orderId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ operatorLogin })
+        });
+        const result = await response.json();
+        if (result.success) {
+            alert('Заказ переведён в статус "Ожидает сборки"');
+            loadAllOrders();
+        } else alert(result.error);
+    } catch (err) { alert('Ошибка: ' + err.message); }
+};
+
+// ==================== ПЕРЕВОД ЗАКАЗА В СТАТУС "ГОТОВ К ВЫДАЧЕ" ====================
+window.markOrderReady = async function(orderId) {
+    if (!confirm('Подтвердите, что заказ собран и готов к выдаче курьеру?')) return;
+    try {
+        const response = await fetch(`/api/operator/order-ready/${orderId}`, { method: 'PUT' });
+        const result = await response.json();
+        if (result.success) {
+            alert('Заказ переведён в статус "Готов к выдаче"');
+            loadAllOrders();
+        } else alert(result.error);
+    } catch (err) { alert('Ошибка: ' + err.message); }
+};

@@ -10,6 +10,7 @@ body {
     color: #333;
 }
 
+/* Шапка */
 .manager-header {
     background-color: #2c3e50;
     color: white;
@@ -20,25 +21,21 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     min-height: 80px;
 }
-
 .header-left h1 {
     font-size: 1.5rem;
     margin: 0;
 }
-
 .header-right {
     display: flex;
     align-items: center;
     gap: 30px;
 }
-
 .user-info-block {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
 }
-
 .user-fullname {
     font-weight: bold;
     font-size: 1.1rem;
@@ -49,16 +46,14 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .user-role {
     font-size: 0.9rem;
     color: #bdc3c7;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.1);
     padding: 3px 10px;
     border-radius: 12px;
     display: inline-block;
 }
-
 .logout-btn {
     background-color: #e74c3c;
     color: white;
@@ -72,22 +67,20 @@ body {
     white-space: nowrap;
     height: fit-content;
 }
-
 .logout-btn:hover {
     background-color: #c0392b;
 }
 
+/* Навигация */
 .manager-nav {
     background-color: #3498db;
     padding: 10px 20px;
 }
-
 .nav-tabs {
     display: flex;
     gap: 20px;
     list-style: none;
 }
-
 .tab-btn {
     background: none;
     border: none;
@@ -97,30 +90,26 @@ body {
     font-size: 1rem;
     border-radius: 5px;
 }
-
 .tab-btn.active {
     background-color: rgba(255,255,255,0.2);
 }
-
 .tab-btn:hover {
     background-color: rgba(255,255,255,0.1);
 }
 
+/* Контейнер и вкладки */
 .manager-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
 .tab-content {
     display: none;
     margin-top: 20px;
 }
-
 .tab-content.active {
     display: block;
 }
-
 h2 {
     color: #2c3e50;
     margin-bottom: 20px;
@@ -128,85 +117,73 @@ h2 {
     border-bottom: 2px solid #eee;
 }
 
+/* Товары */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
-
 .product-card {
     background-color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .product-card.high-discount {
     background-color: #e8f5e8;
     border-left: 4px solid #2E8B57;
 }
-
 .product-card.out-of-stock {
     background-color: #f0f8ff;
     opacity: 0.8;
 }
-
 .product-image {
     text-align: center;
     margin-bottom: 15px;
 }
-
 .product-image img {
     max-width: 100%;
     max-height: 200px;
     object-fit: cover;
     border-radius: 5px;
 }
-
 .product-name {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: #2c3e50;
 }
-
 .product-detail {
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 1px solid #eee;
 }
-
 .label {
     font-weight: bold;
     color: #666;
     display: inline-block;
     min-width: 150px;
 }
-
 .value {
     color: #333;
 }
-
 .price-section {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 2px solid #eee;
 }
-
 .original-price {
     text-decoration: line-through;
     color: #e74c3c;
     margin-right: 10px;
     font-size: 1rem;
 }
-
 .current-price {
     font-size: 1.3rem;
     font-weight: bold;
     color: #2c3e50;
 }
-
 .discount-badge {
     display: inline-block;
     background-color: #e74c3c;
@@ -218,7 +195,6 @@ h2 {
     margin-bottom: 10px;
     margin-right: 5px;
 }
-
 .stock-badge {
     display: inline-block;
     padding: 5px 10px;
@@ -227,21 +203,19 @@ h2 {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
-
 .in-stock {
     background-color: #27ae60;
     color: white;
 }
-
 .out-of-stock-badge {
     background-color: #f39c12;
     color: white;
 }
 
+/* Заказы */
 .orders-list {
     margin-top: 20px;
 }
-
 .order-card {
     background-color: white;
     border-radius: 8px;
@@ -249,7 +223,6 @@ h2 {
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .order-header {
     display: flex;
     justify-content: space-between;
@@ -257,19 +230,18 @@ h2 {
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
 .order-id {
     font-weight: bold;
     color: #2c3e50;
     font-size: 1.2rem;
 }
-
 .order-date {
     color: #666;
     margin-left: 10px;
 }
-
 .order-status {
     padding: 8px 15px;
     border-radius: 20px;
@@ -278,7 +250,6 @@ h2 {
     min-width: 100px;
     text-align: center;
 }
-
 .status-new { background-color: #3498db; color: white; }
 .status-processing { background-color: #f39c12; color: white; }
 .status-delivering { background-color: #9b59b6; color: white; }
@@ -291,18 +262,15 @@ h2 {
     background-color: #f8f9fa;
     border-radius: 5px;
 }
-
 .order-info p {
     margin-bottom: 8px;
 }
-
 .order-items {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 .order-items th {
     background-color: #f8f9fa;
     padding: 12px;
@@ -311,44 +279,60 @@ h2 {
     font-weight: bold;
     color: #2c3e50;
 }
-
 .order-items td {
     padding: 12px;
     border-bottom: 1px solid #eee;
 }
-
 .order-total {
     text-align: right;
     margin-top: 15px;
     padding-top: 15px;
     border-top: 2px solid #eee;
 }
-
 .order-total p {
     margin-bottom: 8px;
     font-size: 1.1rem;
 }
-
 .order-total p:last-child {
     font-weight: bold;
     font-size: 1.3rem;
     color: #2c3e50;
 }
+.card-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.ready-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.ready-btn:hover {
+    background-color: #219653;
+}
 
+/* Курьеры */
 .couriers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
-
 .courier-card {
     background-color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .courier-name {
     color: #2c3e50;
     margin-bottom: 15px;
@@ -357,28 +341,23 @@ h2 {
     font-size: 1.2rem;
     font-weight: bold;
 }
-
 .courier-detail {
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 1px solid #f5f5f5;
 }
-
 .courier-detail:last-child {
     border-bottom: none;
 }
-
 .courier-label {
     font-weight: bold;
     color: #666;
     display: inline-block;
     min-width: 140px;
 }
-
 .courier-value {
     color: #333;
 }
-
 .employment-status {
     padding: 5px 10px;
     border-radius: 15px;
@@ -387,36 +366,152 @@ h2 {
     display: inline-block;
     margin-bottom: 10px;
 }
-
 .status-free {
     background-color: #27ae60;
     color: white;
 }
-
 .status-busy {
     background-color: #f39c12;
     color: white;
 }
 
-.loading,
-.error,
-.no-data,
-.no-orders,
-.no-couriers {
-    text-align: center;
-    padding: 40px;
-    grid-column: 1 / -1;
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.modal-large {
+    max-width: 600px;
+}
+.modal-header {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+}
+.close-btn {
+    color: #666;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-btn:hover {
+    color: #333;
+}
+.modal-body {
+    padding: 20px;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.delivery-calculation {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+.calc-params p {
+    margin: 5px 0;
+}
+.calc-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.calc-btn:hover {
+    background-color: #2980b9;
+}
+.delivery-price-display {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+.save-price-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.save-price-btn:hover {
+    background-color: #219653;
+}
+.buttons-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.buttons-group button {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+.add-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.add-btn:hover {
+    background-color: #219653;
+}
+.refresh-btn {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.refresh-btn:hover {
+    background-color: #7f8c8d;
 }
 
+.loading, .error, .no-data, .no-orders, .no-couriers {
+    text-align: center;
+    padding: 40px;
+}
 .error {
     background-color: #ffeaea;
     color: #c0392b;
     border-radius: 8px;
 }
-
-.no-orders,
-.no-data,
-.no-couriers {
+.no-orders, .no-data, .no-couriers {
     color: #666;
     font-size: 1.1rem;
     background-color: white;
@@ -430,358 +525,133 @@ h2 {
         gap: 15px;
         padding: 10px;
     }
-    
     .header-right {
         width: 100%;
         justify-content: space-between;
         gap: 15px;
     }
-    
     .user-info-block {
         max-width: 200px;
     }
-    
     .user-fullname {
         font-size: 1rem;
         max-width: 180px;
     }
-    
     .logout-btn {
         padding: 8px 15px;
     }
-    
-    .products-grid,
-    .couriers-grid {
+    .products-grid, .couriers-grid {
         grid-template-columns: 1fr;
     }
-    
     .order-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
     }
-    
     .order-status {
         align-self: flex-start;
     }
 }
 
-.assign-container {
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
-
-.assign-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
-
-.assign-btn:hover {
-    background-color: #219653;
+.data-table th {
+    background-color: #f2f2f2;
 }
-
-.order-info {
+.finance-summary {
     background-color: #f8f9fa;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-.order-info p {
-    margin-bottom: 8px;
-}
-
-/* Стили для модального окна */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 0;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-.modal-header {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eee;
-    border-radius: 8px 8px 0 0;
+/* Стили для отчётов */
+.report-filters {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
 }
-
-.modal-header h3 {
-    margin: 0;
-    color: #2c3e50;
-}
-
-.close-btn {
-    color: #666;
-    font-size: 28px;
+.report-filters label {
+    display: flex;
+    flex-direction: column;
     font-weight: bold;
-    cursor: pointer;
-    line-height: 1;
+    color: #555;
+    gap: 5px;
 }
-
-.close-btn:hover {
-    color: #333;
+.report-filters input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
-
-.modal-body {
-    padding: 20px;
-}
-
-.edit-price-btn {
+.report-filters button {
+    padding: 8px 16px;
     background-color: #3498db;
     color: white;
     border: none;
-    padding: 3px 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 0.8rem;
-    margin-left: 10px;
+    font-size: 0.9rem;
 }
-
-.edit-price-btn:hover {
+.report-filters button:hover {
     background-color: #2980b9;
 }
-
-/* Стили для расчета доставки */
-.delivery-calculation {
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+.report-table th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+.report-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.report-table tr:hover {
+    background-color: #f5f5f5;
+}
+.report-summary {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #27ae60;
+}
+.finance-summary {
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
-    margin: 15px 0;
+    margin-bottom: 20px;
 }
-
-.calc-params {
-    margin-bottom: 15px;
-}
-
-.calc-params p {
-    margin: 5px 0;
-}
-
-.calc-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.calc-btn:hover {
-    background-color: #2980b9;
-}
-
-.delivery-price-display {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
-}
-
-.save-price-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.save-price-btn:hover {
-    background-color: #219653;
-}
-
-.modal-large {
-    max-width: 600px;
-    width: 90%;
-}
-
-/* Стили для кнопок в модальном окне */
-.assign-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
     font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
 }
-
-.assign-btn:hover {
-    background-color: #219653;
-}
-
-/* Кнопки в модальном окне */
-.modal .action-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.modal .add-btn {
-    background-color: #27ae60;
-    color: white;
-}
-
-.modal .add-btn:hover {
-    background-color: #219653;
-}
-
-.modal .refresh-btn {
-    background-color: #95a5a6;
-    color: white;
-}
-
-.modal .refresh-btn:hover {
-    background-color: #7f8c8d;
-}
-
-/* Кнопка расчета стоимости */
-.calc-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.calc-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Кнопка сохранения стоимости */
-.save-price-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.save-price-btn:hover {
-    background-color: #219653;
-}
-
-/* Стили для select в модальном окне */
-.modal .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 5px;
-}
-
-.modal .form-control:focus {
-    outline: none;
-    border-color: #3498db;
-}
-
-/* Группа кнопок в модальном окне */
-.modal .form-group:last-child {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.modal .form-group:last-child button {
-    flex: 1;
-}
-
-/* Группа кнопок в модальном окне */
-.buttons-group {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.buttons-group button {
-    flex: 1;
-    padding: 12px 20px;
-    font-size: 1rem;
-}
-
-/* Стили для вкладок */
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-/* Стили для контейнеров */
-#assign-container,
-#orders-container,
-#products-container,
-#couriers-container {
-    min-height: 200px;
-}
-
-/* Стили для загрузки и ошибок */
-.loading {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-    font-size: 1.1rem;
-}
-
-.error {
-    text-align: center;
-    padding: 40px;
-    color: #c0392b;
-    background-color: #ffeaea;
-    border-radius: 8px;
-}
-
-.no-data,
-.no-orders,
-.no-couriers {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-    font-size: 1.1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+.status-badge.status-new { background-color: #3498db; color: white; }
+.status-badge.status-processing { background-color: #f39c12; color: white; }
+.status-badge.status-delivering { background-color: #9b59b6; color: white; }
+.status-badge.status-delivered { background-color: #27ae60; color: white; }
+.status-badge.status-cancelled { background-color: #e74c3c; color: white; }

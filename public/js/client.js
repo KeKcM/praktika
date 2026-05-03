@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('user-fullname').textContent = userFullName;
     document.getElementById('user-role').textContent = userRoleName;
     
-    loadCart();
+    loadCartFromDB();
     setupTabs();
     loadClientProducts();
     loadClientOrders();
@@ -111,73 +111,91 @@ function displayClientProducts(products) {
 }
 
 // ==================== УПРАВЛЕНИЕ КОРЗИНОЙ ====================
-function loadCart() {
-    const savedCart = localStorage.getItem('clientCart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-    } else {
-        cart = [];
-    }
-    updateCartCount();
-}
-
-function saveCart() {
-    localStorage.setItem('clientCart', JSON.stringify(cart));
-    updateCartCount();
-}
 
 function updateCartCount() {
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
     document.getElementById('cart-count').textContent = count;
 }
 
-function addToCart(productId) {
+async function loadCartFromDB() {
+    const login = localStorage.getItem('login');
+    if (!login) return;
+    const res = await fetch(`/api/client/cart?login=${encodeURIComponent(login)}`);
+    const result = await res.json();
+    if (result.success) {
+        cart = result.cart.map(item => ({
+            id: item.product_id,
+            name: item.product_name,
+            price: parseFloat(item.price),
+            quantity: item.quantity,
+            maxStock: item.stock_quantity,
+            unit: item.unit,
+            original_price: item.original_price,
+            discount_percent: item.discount_percent
+        }));
+        updateCartCount();
+        displayCart();
+    }
+}
+
+async function addToCart(productId) {
     const product = productsList.find(p => p.id === productId);
     if (!product) return;
-    
-    const existingItem = cart.find(item => item.id === productId);
-    
-    if (existingItem) {
-        if (existingItem.quantity + 1 <= product.stock_quantity) {
-            existingItem.quantity++;
-        } else {
-            alert(`Недостаточно товара на складе. Доступно: ${product.stock_quantity} ${product.unit}`);
-            return;
-        }
+    const quantity = 1;
+    const login = localStorage.getItem('login');
+    const response = await fetch('/api/client/cart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, product_id: productId, quantity })
+    });
+    const result = await response.json();
+    if (result.success) {
+        await loadCartFromDB();
+        displayClientProducts(productsList);
     } else {
-        cart.push({
-            id: product.id,
-            name: product.product_name,
-            price: parseFloat(product.current_price),
-            quantity: 1,
-            maxStock: product.stock_quantity,
-            unit: product.unit || 'шт.'
-        });
+        alert(result.error);
     }
-    
-    saveCart();
-    displayClientProducts(productsList);
-    alert('Товар добавлен в корзину');
 }
 
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    saveCart();
-    displayCart();
+async function clearCart() {
+    const login = localStorage.getItem('login');
+    await fetch('/api/client/cart/clear', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login })
+    });
 }
 
-function updateCartQuantity(productId, newQuantity) {
+async function removeFromCart(productId) {
+    const login = localStorage.getItem('login');
+    const response = await fetch('/api/client/cart', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, product_id: productId })
+    });
+    if (response.ok) {
+        await loadCartFromDB();
+        displayCart();
+        displayClientProducts(productsList);
+    }
+}
+
+async function updateCartQuantity(productId, newQuantity) {
     const item = cart.find(item => item.id === productId);
-    if (item) {
-        if (newQuantity <= 0) {
-            removeFromCart(productId);
-        } else if (newQuantity <= item.maxStock) {
-            item.quantity = newQuantity;
-            saveCart();
-            displayCart();
-        } else {
-            alert(`Недостаточно товара на складе. Доступно: ${item.maxStock} ${item.unit}`);
-        }
+    if (!item) return;
+    const login = localStorage.getItem('login');
+    const response = await fetch('/api/client/cart', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, product_id: productId, quantity: newQuantity })
+    });
+    const result = await response.json();
+    if (result.success) {
+        await loadCartFromDB();
+        displayCart();
+        displayClientProducts(productsList);
+    } else {
+        alert(result.error);
     }
 }
 
@@ -274,14 +292,13 @@ document.getElementById('checkout-form')?.addEventListener('submit', async funct
         console.log('Результат:', result);
         
         if (result.success) {
-            alert(`Заказ №${result.orderId} успешно оформлен! Стоимость доставки будет рассчитана менеджером.`);
-            cart = [];
-            saveCart();
+            alert(`Заказ №${result.orderId} успешно оформлен!`);
+            await clearCart();           // очищаем корзину в БД
+            // saveCart();              // <-- УДАЛИТЬ ЭТУ СТРОКУ
             closeCheckoutModal();
             loadClientOrders();
             displayCart();
             displayClientProducts(productsList);
-            // Переключаемся на вкладку заказов
             document.querySelector('[data-tab="orders"]').click();
         } else {
             alert(result.error || 'Ошибка при оформлении заказа');
@@ -326,10 +343,6 @@ function showCheckoutModal() {
     // Показываем модальное окно
     document.getElementById('checkout-modal').style.display = 'block';
     console.log('Модальное окно открыто');
-}
-
-function closeCheckoutModal() {
-    document.getElementById('checkout-modal').style.display = 'none';
 }
 
 function closeCheckoutModal() {
